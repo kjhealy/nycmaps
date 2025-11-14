@@ -15,3 +15,5 @@ Suggests:
     sf (>= 1.0.0),
     tibble (>= 3.0.0)
 LazyData: true
+URL: https://github.com/kjhealy/nycmaps
+BugReports: https://github.com/kjhealy/nycmaps/issues
