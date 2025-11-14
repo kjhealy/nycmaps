@@ -1,10 +1,4 @@
 ## code to prepare `nyc_zips` and `nyc_zip_sf` datasets goes here
-library(tidyverse)
-library(tidycensus)
-library(here)
-library(kjhmisc)
-library(devtools)
-
 source(here("data-raw", "_shared.R"))
 
 read_csv(here("data-raw", "zips", "nyc-ziptable.csv")) |>

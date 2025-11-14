@@ -1,4 +1,9 @@
 # Shared code and objects
+library(tidyverse)
+library(tidycensus)
+library(here)
+library(kjhmisc)
+library(devtools)
 
 # Prep zip codes
 ny_county_boros <- tribble(
