@@ -1,0 +1,17 @@
+Package: nycmaps
+Title: A collection of sf objects and related tibbles for making maps of New York City
+Version: 0.0.1.9000
+Authors@R: 
+    person("Kieran", "Healy", , "kjhealy@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "https://orcid.org/0000-0001-9114-981X"))
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends: 
+    R (>= 3.5)
+Suggests:
+    sf (>= 1.0.0),
+    tibble (>= 3.0.0)
+LazyData: true
