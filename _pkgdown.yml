@@ -1,0 +1,98 @@
+authors:
+  Kieran Healy:
+    href: http://kieranhealy.org
+
+url: https://kjhealy.github.io/nycmaps/
+template:
+  bootstrap: 5
+  bslib:
+    base_font: {google: "IBM Plex Sans"}
+    heading_font: {google: "IBM Plex Sans"}
+    code_font: {google: "IBM Plex Mono"}
+
+reference:
+  - title: "Borough and Administrative Boundaries"
+    desc: Borough boundaries and related spatial data.
+    contents:
+      - nyc_boros
+      - nyc_boros_sf
+
+  - title: "Zip Codes"
+    desc: Zip code tabulation areas (ZCTAs).
+    contents:
+      - nyc_zips
+      - nyc_zip_sf
+
+  - title: "Neighborhood Tabulation Areas"
+    desc: NTA boundaries for 2010 and 2020.
+    contents:
+      - nyc_nta10_sf
+      - nyc_nta20_sf
+
+  - title: "Community District Tabulation Areas"
+    desc: CDTA boundaries.
+    contents:
+      - nyc_cdtas_2020_sf
+
+  - title: "Political Districts"
+    desc: Political and electoral district boundaries.
+    contents:
+      - nyc_city_council_districts_sf
+      - nyc_congressional_districts_sf
+      - nyc_election_precincts_sf
+      - nyc_state_assembly_districts_sf
+      - nyc_state_senate_districts_sf
+
+  - title: "Public Use Microdata Areas"
+    desc: PUMA boundaries for 2010 and 2020.
+    contents:
+      - nyc_pumas_2010_sf
+      - nyc_pumas_2020_sf
+
+  - title: "Census Tracts"
+    desc: Census tract boundaries for 2000, 2010, and 2020.
+    contents:
+      - nyc_census_tracts_2000_sf
+      - nyc_census_tracts_2010_sf
+      - nyc_census_tracts_2020_sf
+
+  - title: "Emergency Services"
+    desc: Police precincts and fire company boundaries.
+    contents:
+      - nyc_police_precincts_sf
+      - nyc_fire_companies_sf
+
+  - title: "Courts and Schools"
+    desc: Municipal court and school district boundaries.
+    contents:
+      - nyc_municipal_court_districts_sf
+      - nyc_school_districts_sf
+
+  - title: "Shoreline"
+    desc: Shoreline with adjacent areas clipped.
+    contents:
+      - nyc_shoclip_sf
+
+  - title: "Geographic Relationships"
+    desc: Data frames describing relationships between geographic areas.
+    contents:
+      - nyc_census_block_relationships_2020_df
+      - nyc_census_tract_relationships_2020_df
+      - nyc_ct_ccd_relationships_2023_df
+      - nyc_ct_pop_proportion_2010_2020_df
+
+
+navbar:
+  right:
+   - icon: fa-github
+     href: https://github.com/kjhealy/nycmaps
+
+figures:
+  dev: grDevices::png
+  dpi: 200
+  dev.args: []
+  fig.ext: png
+  fig.width: 7.2916667
+  fig.height: ~
+  fig.retina: 2
+  fig.asp: 1.618
