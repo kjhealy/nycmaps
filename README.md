@@ -35,13 +35,11 @@ library(tidyverse)
 library(sf)
 #> Linking to GEOS 3.13.0, GDAL 3.8.5, PROJ 9.5.1; sf_use_s2() is TRUE
 library(nycmaps)
+```
 
-
-
-# What's included
+# What’s included
 
 ## Borough Boundaries
-```
 
 ``` r
 nyc_boros
@@ -827,6 +825,47 @@ ggplot(nyc_census_tracts_2020_sf) +
 
 <img src="man/figures/README-unnamed-chunk-41-1.png" width="100%" />
 
+## Atomic Polygons
+
+``` r
+nyc_atomic_polygons_sf
+#> Simple feature collection with 69690 features and 29 fields
+#> Geometry type: MULTIPOLYGON
+#> Dimension:     XY
+#> Bounding box:  xmin: 912287.1 ymin: 113279.3 xmax: 1067383 ymax: 273617.8
+#> Projected CRS: NAD83 / New York Long Island (ftUS)
+#> First 10 features:
+#>   borough censusbloc censusbl_1 censustrac censusbl_2 censusbl_3 censustr_1
+#> 1       5       4023       <NA>     024400       1020       <NA>     024401
+#> 2       5       4030       <NA>     024400       2004       <NA>     024401
+#> 3       5       2002          B     024400       1005       <NA>     024402
+#>   censustr_2 admin_fire water_flag assemdist electdist schooldist commdist
+#> 1     024400      E 151          2        62       002         31      503
+#> 2     024400      E 151          2        62       006         31      503
+#> 3     024400      E 151          2        62       004         31      503
+#>   sb1_volume sb1_page sb2_volume sb2_page sb3_volume sb3_page   atomicid
+#> 1         05      533       <NA>     <NA>       <NA>     <NA> 5024401430
+#> 2         05      533       <NA>     <NA>       <NA>     <NA> 5024401439
+#> 3         05      530         05      529       <NA>     <NA> 5024402223
+#>   atomic_num hurricane censustr_3 censusbl_4 censusbl_5 commercial shape_leng
+#> 1       <NA>         X     024401       1007       <NA>        SI1  2424.5604
+#> 2       <NA>         X     024401       2010       <NA>        SI1  1722.9312
+#> 3       <NA>         6     024402       1004       <NA>        SI1   770.0857
+#>   shape_area                       geometry
+#> 1  244110.62 MULTIPOLYGON (((916060.7 12...
+#> 2  177042.35 MULTIPOLYGON (((917670.2 12...
+#> 3   33790.84 MULTIPOLYGON (((920007.2 12...
+#>  [ reached 'max' / getOption("max.print") -- omitted 7 rows ]
+```
+
+``` r
+ggplot(nyc_atomic_polygons_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+<img src="man/figures/README-unnamed-chunk-43-1.png" width="100%" />
+
 ## Census Tract Population Proportions 2010-2020
 
 ``` r
@@ -953,4 +992,4 @@ ggplot(nyc_shoclip_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-47-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-49-1.png" width="100%" />

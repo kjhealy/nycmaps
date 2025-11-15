@@ -34,8 +34,7 @@ remotes::install_github("kjhealy/nycmaps")
 library(tidyverse)
 library(sf)
 library(nycmaps)
-
-
+```
 
 # What's included
 
@@ -54,7 +53,6 @@ ggplot(nyc_boros_sf) +
   theme_void()
 ```
 
-
 ## Zip Codes (ZCTAs)
 
 ```{r}
@@ -69,7 +67,6 @@ Notice that we have more zip codes in `nyc_zips` than zctas in `nyc_zip_sf`. Sev
 nyc_zip_sf |>
   filter(pop == 0)
 ```
-
 
 ```{r}
 ggplot(nyc_zip_sf) +
@@ -283,6 +280,18 @@ nyc_census_tracts_2020_sf
 
 ```{r}
 ggplot(nyc_census_tracts_2020_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+## Atomic Polygons
+
+```{r}
+nyc_atomic_polygons_sf
+```
+
+```{r}
+ggplot(nyc_atomic_polygons_sf) +
   geom_sf() +
   theme_void()
 ```

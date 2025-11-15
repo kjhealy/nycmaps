@@ -112,6 +112,57 @@
 #' @source <https://nsde.ngs.noaa.gov>
 "nyc_shoclip_sf"
 
+#' NYC Atomic Polygons
+#'
+#' Atomic Polygons are the smallest geographic units created by NYC Planning
+#' that result from the intersection of various administrative and political boundaries.
+#' These polygons are the building blocks for aggregating data across different
+#' geographic hierarchies.
+#'
+#' @format ## `nyc_atomic_polygons_sf`
+#' A simple feature collection with 69,690 rows and 30 columns:
+#' \describe{
+#'   \item{borough}{Borough code (1-5)}
+#'   \item{censusbloc}{2020 Census block number}
+#'   \item{censusbl_1}{Census block suffix}
+#'   \item{censustrac}{2020 Census tract number}
+#'   \item{censusbl_2}{2010 Census block number}
+#'   \item{censusbl_3}{2010 Census block suffix}
+#'   \item{censustr_1}{2020 Census tract number (alternate)}
+#'   \item{censustr_2}{2010 Census tract number}
+#'   \item{admin_fire}{Fire company administrative unit}
+#'   \item{water_flag}{Water area flag indicator}
+#'   \item{assemdist}{State Assembly district}
+#'   \item{electdist}{Election district}
+#'   \item{schooldist}{School district}
+#'   \item{commdist}{Community district}
+#'   \item{sb1_volume}{Section book 1 volume}
+#'   \item{sb1_page}{Section book 1 page}
+#'   \item{sb2_volume}{Section book 2 volume}
+#'   \item{sb2_page}{Section book 2 page}
+#'   \item{sb3_volume}{Section book 3 volume}
+#'   \item{sb3_page}{Section book 3 page}
+#'   \item{atomicid}{Unique atomic polygon identifier}
+#'   \item{atomic_num}{Atomic polygon number}
+#'   \item{hurricane}{Hurricane evacuation zone}
+#'   \item{censustr_3}{2020 Census tract (alternate)}
+#'   \item{censusbl_4}{2020 Census block (alternate)}
+#'   \item{censusbl_5}{2020 Census block suffix (alternate)}
+#'   \item{commercial}{Commercial overlay zone}
+#'   \item{shape_leng}{Shape length in feet}
+#'   \item{shape_area}{Shape area in square feet}
+#'   \item{geometry}{MULTIPOLYGON geometry}
+#' }
+#' @details
+#' NYC Atomic Polygons, Release: 25C, August 2025. Produced by NYC Planning Department.
+#' These polygons are created by overlaying multiple administrative and political
+#' boundaries to create the finest level of geographic detail. They can be used
+#' to aggregate data to any of the boundary types they contain.
+#'
+#' @author Kieran Healy
+#' @source \url{https://www.nyc.gov/content/planning/pages/resources#datasets}
+"nyc_atomic_polygons_sf"
+
 #' New York City Community District Tabulation Areas 2020
 #'
 #' Simple feature collection of NYC Community District Tabulation Areas (CDTAs) from 2020.

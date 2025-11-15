@@ -50,11 +50,12 @@ reference:
       - nyc_pumas_2020_sf
 
   - title: "Census Tracts"
-    desc: Census tract boundaries for 2000, 2010, and 2020.
+    desc: Census tract boundaries for 2000, 2010, and 2020, plus atomic polygons.
     contents:
       - nyc_census_tracts_2000_sf
       - nyc_census_tracts_2010_sf
       - nyc_census_tracts_2020_sf
+      - nyc_atomic_polygons_sf
 
   - title: "Emergency Services"
     desc: Police precincts and fire company boundaries.
@@ -89,7 +90,7 @@ navbar:
 
 figures:
   dev: grDevices::png
-  dpi: 200
+  dpi: 300
   dev.args: []
   fig.ext: png
   fig.width: 7.2916667
