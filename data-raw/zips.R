@@ -1,41 +1,45 @@
-## code to prepare `nyc_zips` and `nyc_zip_sf` datasets goes here
-source(here("data-raw", "_shared.R"))
+## code to prepare `nyc_zips` and `nyc_zip_sf` datasets
+source(here::here("data-raw", "_shared.R"))
 
-read_csv(here("data-raw", "zips", "nyc-ziptable.csv")) |>
+zip_rawpath <- here("data-raw", "zips")
+
+read_csv(here(zip_rawpath, "nyc-ziptable.csv")) |>
   janitor::clean_names() |>
   select(-population_a) |>
-  filter(county %in% ny_county_boros$county) |>
-  rename(zip = zip_code) |>
-  write_csv(here("data-raw", "zips", "nyc-ziptable-clean.csv"))
+  filter(county %in% ny_county_boros$county_name) |>
+  rename(zip = zip_code, city_name = city, county_name = county) |>
+  write_csv(here(zip_rawpath, "nyc-ziptable-clean.csv"))
 
 nyc_ziptable <- read_csv(
-  here("data-raw", "zips", "nyc-ziptable-clean.csv"),
+  here(zip_rawpath, "nyc-ziptable-clean.csv"),
   col_names = TRUE,
   cols(
     zip = col_character(),
-    city = col_character(),
-    county = col_character()
+    city_name = col_character(),
+    county_name = col_character()
   )
 )
+
 nyc_ziptable <- nyc_ziptable |>
   left_join(ny_county_boros) |>
-  relocate(borough, .after = zip) |>
+  relocate(boro_name, .after = zip) |>
   arrange(zip)
 
-readRDS(here("data-raw", "zips", "nyc_dogzips.rda")) |>
+readRDS(here(zip_rawpath, "nyc_dogzips.rda")) |>
   mutate(zip = as.character(zip_code)) |>
-  select(zip, borough, po_name) |>
+  rename(boro_name = borough) |>
+  select(zip, boro_name, po_name) |>
   as_tibble() |>
   select(-geometry) |>
   distinct() |>
-  write_csv(here("data-raw", "zips", "nyc-dogzip-table-clean.csv"))
+  write_csv(here(zip_rawpath, "nyc-dogzip-table-clean.csv"))
 
 nyc_dogzips <- read_csv(
-  here("data-raw", "zips", "nyc-dogzip-table-clean.csv"),
+  here(zip_rawpath, "nyc-dogzip-table-clean.csv"),
   col_names = TRUE,
   cols(
     zip = col_character(),
-    borough = col_character(),
+    boro_name = col_character(),
     po_name = col_character()
   )
 ) |>
@@ -43,7 +47,7 @@ nyc_dogzips <- read_csv(
 
 nyc_dogzips <- nyc_dogzips |>
   left_join(ny_county_boros) |>
-  relocate(borough, .after = zip) |>
+  relocate(boro_name, .after = zip) |>
   arrange(zip)
 
 # l nin r
@@ -54,6 +58,7 @@ setdiff(nyc_ziptable$zip, nyc_dogzips$zip)
 nyc_zips <- full_join(nyc_ziptable, nyc_dogzips)
 
 usethis::use_data(nyc_zips, overwrite = TRUE, compress = "xz")
+
 
 # ugh
 # https://github.com/walkerke/tidycensus/issues/475
@@ -71,7 +76,7 @@ nyc_zip_sf <- get_acs(
   geometry = TRUE
 ) |>
   select(-c(variable, moe)) |>
-  rename(zip = GEOID, pop = estimate, name = NAME) |>
+  rename(zip = GEOID, pop = estimate, zip_name = NAME) |>
   filter(zip %in% nyc_zips$zip)
 
 usethis::use_data(nyc_zip_sf, overwrite = TRUE, compress = "xz")

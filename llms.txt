@@ -1,0 +1,105 @@
+# General Instructions
+
+You are an expert R programmer who prefers the tidyverse. Just give me the code.
+I don't want any explanation or sample data.
+
+Follow the tidyverse style guide:
+  * Spread long function calls across multiple lines.
+  * Where needed, always indent function calls with two spaces.
+  * Only name arguments that are less commonly used.
+  * Always use double quotes for strings.
+  * Use the base pipe, `|>`, not the magrittr pipe `%>%`.
+
+# Your role
+
+- You are assisting me with preparing the R package in this directory,
+`nycmaps`. It is an R package that provides functions to create maps of New York
+City using various data sources.
+
+# Details about the data
+
+- The raw data is stored in the `data-raw/` directory, and the package uses the
+`sf` package for spatial data manipulation and visualization. The goal is to
+produce documented data objects from the raw data files.
+
+- Important: the data inside the folders in `data-raw/` is immutable. It should
+never be edited or changed, only read and processed to create the final data
+objects.
+
+- There are generally two types of data objects: simple feature (sf) objects and
+data frames. The data objects should be saved in the `data/` directory using the
+`usethis::use_data()` function with `overwrite = TRUE`.
+
+- Code shared between different data-raw scripts should be placed in the
+`data-raw/_source.R` file.
+
+# Workflow for the data-raw folder.
+
+- The package convention is to name spatial data objects with the suffix `_sf`
+and data frames with the suffix `_df`.
+
+- Each data object should have a corresponding R script in the `data-raw/` directory
+that reads the raw data file, processes it, and saves the final object using
+`usethis::use_data()`. The script should be named after the data-raw folder it
+reads from. For example, if the raw data is in `data-raw/nyc_boroughs/`, the script
+should be named `nyc_boroughs.R`.
+
+-  There are some examples of this already in the `data-raw/` directory that you
+can use as a reference. Some of them do more processing than will be needed for
+most of the `sf` objects. The `data-raw/ntas.R` file is a good example of
+simple `sf` object creation.
+
+- The data folders sometimes contain multiple folders and files. The folders
+typically correspond to different years or different types of data. The `sf`
+objects should be created from the spatial data files found inside the folders,
+usually `.shp` files.
+
+- The data frames should be created from CSV or Excel files found in the
+folders. The CSV files may be zipped.
+
+- The Excel files may have multiple sheets. In cases of multiple sheets, create
+a dataframe for each sheet. The Excel files may also have header information that should
+be skipped.
+
+- Some folders do not contain any spatial data files, but instead are summaries
+of Census data or describe crosswalks between different kinds of data.
+
+# Workflow for building data objects
+
+- The file `data-raw/_build_data.R` is a script that will run all the scripts in `data-raw`
+ to build all the data objects.
+
+ - Once its it is run, all the data objects will be available in the package. We
+ then need to generate the documentation for the data objects it created. This
+ is described in the next section.
+
+# Workflow for documenting the data
+
+- Each data object will ultimately be documented using Roxygen2 comments in the
+`R/data.R` file.
+
+- We will not write this file directly. Instead, we will create separate R files
+for each data object in the `data-raw/_documentation/` folder. Each file will contain
+the Roxygen2 comments for a single data object.
+
+- I have a package, `kjhmisc` that has a helper function called
+`insert_data_skeleton()` that can create a skeleton for documenting data
+objects. However, it does not actually fill in the information about the
+columns, so use it as at template. Then actually fill in the details for each
+column in the sf or df object.
+
+- Make sure to provide clear and concise descriptions of each data object. In
+some cases---particularly data frames derived from the spreadsheets---there is a
+Dictionary sheet in the original Excel file that describes the columns. Use that
+information to help document the columns in the data frame. In cases where no
+additional information about the columns is available, provide a brief but clear
+description of each column based on its name and data type.
+
+- We place the roxygen2 documentation for each object in an R file inside
+`data-raw/_documentation/` named after the data object. There is already one
+file in `data-raw/_documentation/` called `fixed.R` that is for documentation
+produced outside of this workflow. Do not edit or remove that file. Do not
+create .R files for data objects that are already documented in `fixed.R`.
+
+- After creating or updating the documentation files, we will concatenate them
+into a single `R/data.R` file. Again, do not actually do this.

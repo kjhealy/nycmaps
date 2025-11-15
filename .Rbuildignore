@@ -2,3 +2,8 @@
 ^\.Rproj\.user$
 ^data-raw$
 ^LICENSE\.md$
+^README\.Rmd$
+llms.txt
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

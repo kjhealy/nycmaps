@@ -1,19 +1,24 @@
 # Shared code and objects
 library(devtools)
 library(tidyverse)
-library(tidycensus)
+library(readxl)
 library(here)
 library(kjhmisc)
-library(devtools)
+
+library(sf)
+
+library(tidycensus)
+options(tigris_use_cache = TRUE)
+
 
 # Prep zip codes
 ny_county_boros <- tribble(
-  ~long_county                , ~county           , ~short_county , ~borough        ,
-  "New York County, New York" , "New York County" , "New York"    , "Manhattan"     ,
-  "Queens County, New York"   , "Queens County"   , "Queens"      , "Queens"        ,
-  "Kings County, New York"    , "Kings County"    , "Kings"       , "Brooklyn"      ,
-  "Bronx County, New York"    , "Bronx County"    , "Bronx"       , "Bronx"         ,
-  "Richmond County, New York" , "Richmond County" , "Richmond"    , "Staten Island"
+  ~long_county_name           , ~county_name      , ~short_county_name , ~boro_name      ,
+  "New York County, New York" , "New York County" , "New York"         , "Manhattan"     ,
+  "Queens County, New York"   , "Queens County"   , "Queens"           , "Queens"        ,
+  "Kings County, New York"    , "Kings County"    , "Kings"            , "Brooklyn"      ,
+  "Bronx County, New York"    , "Bronx County"    , "Bronx"            , "Bronx"         ,
+  "Richmond County, New York" , "Richmond County" , "Richmond"         , "Staten Island"
 )
 
 census_vars <- tribble(

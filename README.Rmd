@@ -1,0 +1,324 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# nycmaps
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+Provides sf objects of various New York City geographies (and associated tibbles of identifiers) for drawing thematic maps.
+
+## Installation
+
+You can install the development version of nycmaps like so:
+
+``` r
+remotes::install_github("kjhealy/nycmaps")
+```
+
+## Load
+
+```{r}
+library(tidyverse)
+library(sf)
+library(nycmaps)
+
+
+
+# What's included
+
+## Borough Boundaries
+
+```{r}
+nyc_boros
+
+nyc_boros_sf
+```
+
+
+```{r}
+ggplot(nyc_boros_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+
+## Zip Codes (ZCTAs)
+
+```{r}
+nyc_zips
+
+nyc_zip_sf
+```
+
+Notice that we have more zip codes in `nyc_zips` than zctas in `nyc_zip_sf`. Several of these zip codes are for PO Boxes or otherwise non-residential (like LGA and Fort Totten Park).
+
+```{r}
+nyc_zip_sf |>
+  filter(pop == 0)
+```
+
+
+```{r}
+ggplot(nyc_zip_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+## Neighborhood Tabulation Areas
+
+### NTA 2010
+
+```{r}
+nyc_nta10_sf
+```
+
+```{r}
+ggplot(nyc_nta10_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+### NTA 2020
+
+```{r}
+nyc_nta20_sf
+```
+
+```{r}
+ggplot(nyc_nta20_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+## Community District Tabulation Areas (CDTAs) 2020
+
+```{r}
+nyc_cdtas_2020_sf
+```
+
+```{r}
+ggplot(nyc_cdtas_2020_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+## Police Precincts
+
+```{r}
+nyc_police_precincts_sf
+```
+
+```{r}
+ggplot(nyc_police_precincts_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+## City Council Districts
+
+```{r}
+nyc_city_council_districts_sf
+```
+
+```{r}
+ggplot(nyc_city_council_districts_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+## Congressional Districts
+
+```{r}
+nyc_congressional_districts_sf
+```
+
+```{r}
+ggplot(nyc_congressional_districts_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+## Election Precincts
+
+```{r}
+nyc_election_precincts_sf
+```
+
+```{r}
+ggplot(nyc_election_precincts_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+## School Districts
+
+```{r}
+nyc_school_districts_sf
+```
+
+```{r}
+ggplot(nyc_school_districts_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+## State Assembly Districts
+
+```{r}
+nyc_state_assembly_districts_sf
+```
+
+```{r}
+ggplot(nyc_state_assembly_districts_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+## State Senate Districts
+
+```{r}
+nyc_state_senate_districts_sf
+```
+
+```{r}
+ggplot(nyc_state_senate_districts_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+## Municipal Court Districts
+
+```{r}
+nyc_municipal_court_districts_sf
+```
+
+```{r}
+ggplot(nyc_municipal_court_districts_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+## Public Use Microdata Areas (PUMAs)
+
+### PUMAs 2010
+
+```{r}
+nyc_pumas_2010_sf
+```
+
+```{r}
+ggplot(nyc_pumas_2010_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+### PUMAs 2020
+
+```{r}
+nyc_pumas_2020_sf
+```
+
+```{r}
+ggplot(nyc_pumas_2020_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+## Fire Companies
+
+```{r}
+nyc_fire_companies_sf
+```
+
+```{r}
+ggplot(nyc_fire_companies_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+## Census Tracts
+
+### Census Tracts 2000
+
+```{r}
+nyc_census_tracts_2000_sf
+```
+
+```{r}
+ggplot(nyc_census_tracts_2000_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+### Census Tracts 2010
+
+```{r}
+nyc_census_tracts_2010_sf
+```
+
+```{r}
+ggplot(nyc_census_tracts_2010_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+### Census Tracts 2020
+
+```{r}
+nyc_census_tracts_2020_sf
+```
+
+```{r}
+ggplot(nyc_census_tracts_2020_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+## Census Tract Population Proportions 2010-2020
+
+```{r}
+nyc_ct_pop_proportion_2010_2020_df
+```
+
+## Census Block Relationships 2020
+
+```{r}
+nyc_census_block_relationships_2020_df
+```
+
+## Census Tract to City Council District Relationships 2023
+
+```{r}
+nyc_ct_ccd_relationships_2023_df
+```
+
+## Census Tract Relationships 2020
+
+```{r}
+nyc_census_tract_relationships_2020_df
+```
+
+## Shoreline with Adjacent Areas
+
+```{r}
+nyc_shoclip_sf
+```
+
+```{r}
+ggplot(nyc_shoclip_sf) +
+  geom_sf() +
+  theme_void()
+```
