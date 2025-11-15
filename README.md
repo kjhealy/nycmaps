@@ -72,7 +72,7 @@ ggplot(nyc_boros_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+<img src="man/figures/README-nyc-boros-map-1.png" width="100%" />
 
 ## Zip Codes (ZCTAs)
 
@@ -146,7 +146,7 @@ ggplot(nyc_zip_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-nyc-zips-map-1.png" width="100%" />
 
 ## Neighborhood Tabulation Areas
 
@@ -201,7 +201,7 @@ ggplot(nyc_nta10_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />
+<img src="man/figures/README-nyc-nta10-map-1.png" width="100%" />
 
 ### NTA 2020
 
@@ -258,7 +258,7 @@ ggplot(nyc_nta20_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-11-1.png" width="100%" />
+<img src="man/figures/README-nyc-nta20-map-1.png" width="100%" />
 
 ## Community District Tabulation Areas (CDTAs) 2020
 
@@ -311,7 +311,7 @@ ggplot(nyc_cdtas_2020_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-13-1.png" width="100%" />
+<img src="man/figures/README-nyc-cdtas-2020-map-1.png" width="100%" />
 
 ## Police Precincts
 
@@ -342,7 +342,7 @@ ggplot(nyc_police_precincts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-15-1.png" width="100%" />
+<img src="man/figures/README-nyc-police-precincts-map-1.png" width="100%" />
 
 ## City Council Districts
 
@@ -373,7 +373,7 @@ ggplot(nyc_city_council_districts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-17-1.png" width="100%" />
+<img src="man/figures/README-nyc-city-council-map-1.png" width="100%" />
 
 ## Congressional Districts
 
@@ -404,7 +404,7 @@ ggplot(nyc_congressional_districts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-19-1.png" width="100%" />
+<img src="man/figures/README-nyc-congressional-map-1.png" width="100%" />
 
 ## Election Precincts
 
@@ -435,7 +435,7 @@ ggplot(nyc_election_precincts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-21-1.png" width="100%" />
+<img src="man/figures/README-nyc-election-precincts-map-1.png" width="100%" />
 
 ## School Districts
 
@@ -466,7 +466,7 @@ ggplot(nyc_school_districts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-23-1.png" width="100%" />
+<img src="man/figures/README-nyc-school-districts-map-1.png" width="100%" />
 
 ## State Assembly Districts
 
@@ -497,7 +497,7 @@ ggplot(nyc_state_assembly_districts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-25-1.png" width="100%" />
+<img src="man/figures/README-nyc-state-assembly-map-1.png" width="100%" />
 
 ## State Senate Districts
 
@@ -528,7 +528,7 @@ ggplot(nyc_state_senate_districts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-27-1.png" width="100%" />
+<img src="man/figures/README-nyc-state-senate-map-1.png" width="100%" />
 
 ## Municipal Court Districts
 
@@ -570,7 +570,7 @@ ggplot(nyc_municipal_court_districts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-29-1.png" width="100%" />
+<img src="man/figures/README-nyc-municipal-court-map-1.png" width="100%" />
 
 ## Public Use Microdata Areas (PUMAs)
 
@@ -603,7 +603,7 @@ ggplot(nyc_pumas_2010_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-31-1.png" width="100%" />
+<img src="man/figures/README-nyc-pumas-2010-map-1.png" width="100%" />
 
 ### PUMAs 2020
 
@@ -634,7 +634,7 @@ ggplot(nyc_pumas_2020_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-33-1.png" width="100%" />
+<img src="man/figures/README-nyc-pumas-2020-map-1.png" width="100%" />
 
 ## Fire Companies
 
@@ -676,7 +676,7 @@ ggplot(nyc_fire_companies_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-35-1.png" width="100%" />
+<img src="man/figures/README-nyc-fire-companies-map-1.png" width="100%" />
 
 ## Census Tracts
 
@@ -726,7 +726,7 @@ ggplot(nyc_census_tracts_2000_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-37-1.png" width="100%" />
+<img src="man/figures/README-nyc-census-tracts-2000-map-1.png" width="100%" />
 
 ### Census Tracts 2010
 
@@ -774,7 +774,7 @@ ggplot(nyc_census_tracts_2010_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-39-1.png" width="100%" />
+<img src="man/figures/README-nyc-census-tracts-2010-map-1.png" width="100%" />
 
 ### Census Tracts 2020
 
@@ -823,7 +823,7 @@ ggplot(nyc_census_tracts_2020_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-41-1.png" width="100%" />
+<img src="man/figures/README-nyc-census-tracts-2020-map-1.png" width="100%" />
 
 ## Atomic Polygons
 
@@ -864,7 +864,7 @@ ggplot(nyc_atomic_polygons_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-43-1.png" width="100%" />
+<img src="man/figures/README-nyc-atomic-polygons-map-1.png" width="100%" />
 
 ## Census Tract Population Proportions 2010-2020
 
@@ -992,4 +992,4 @@ ggplot(nyc_shoclip_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-49-1.png" width="100%" />
+<img src="man/figures/README-nyc-shoclip-map-1.png" width="100%" />
