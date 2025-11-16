@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# nycmaps
+# nycmaps <img src="man/figures/nycmaps.png" align="right" width="360">
 
 <!-- badges: start -->
 <!-- badges: end -->
