@@ -285,6 +285,44 @@ ggplot(nyc_census_tracts_2020_sf) +
   theme_void()
 ```
 
+## Census Blocks
+
+### Census Blocks 2000
+
+```{r nyc-census-blocks-2000}
+nyc_census_blocks_2000_sf
+```
+
+```{r nyc-census-blocks-2000-map}
+ggplot(nyc_census_blocks_2000_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+### Census Blocks 2010
+
+```{r nyc-census-blocks-2010}
+nyc_census_blocks_2010_sf
+```
+
+```{r nyc-census-blocks-2010-map}
+ggplot(nyc_census_blocks_2010_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+### Census Blocks 2020
+
+```{r nyc-census-blocks-2020}
+nyc_census_blocks_2020_sf
+```
+
+```{r nyc-census-blocks-2020-map}
+ggplot(nyc_census_blocks_2020_sf) +
+  geom_sf() +
+  theme_void()
+```
+
 ## Atomic Polygons
 
 ```{r nyc-atomic-polygons}

@@ -7,3 +7,7 @@ llms.txt
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^[.]?air[.]toml$
+^\.vscode$
+^README.html$
+^.claude$

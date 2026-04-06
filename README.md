@@ -22,13 +22,13 @@ remotes::install_github("kjhealy/nycmaps")
 
 ``` r
 library(tidyverse)
-#> ── Attaching core tidyverse packages ──────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 2.0.0 ──
-#> ✔ dplyr     1.1.4     ✔ readr     2.1.5
+#> ── Attaching core tidyverse packages ─────────────────────────────────────────────────────────────────────────── tidyverse 2.0.0 ──
+#> ✔ dplyr     1.2.0     ✔ readr     2.2.0
 #> ✔ forcats   1.0.1     ✔ stringr   1.6.0
-#> ✔ ggplot2   4.0.0     ✔ tibble    3.3.0
-#> ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-#> ✔ purrr     1.2.0     
-#> ── Conflicts ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+#> ✔ ggplot2   4.0.2     ✔ tibble    3.3.1
+#> ✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+#> ✔ purrr     1.2.1     
+#> ── Conflicts ───────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
 #> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
@@ -72,7 +72,7 @@ ggplot(nyc_boros_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-boros-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-boros-map-1.png" alt="" width="100%" />
 
 ## Zip Codes (ZCTAs)
 
@@ -146,7 +146,7 @@ ggplot(nyc_zip_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-zips-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-zips-map-1.png" alt="" width="100%" />
 
 ## Neighborhood Tabulation Areas
 
@@ -201,7 +201,7 @@ ggplot(nyc_nta10_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-nta10-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-nta10-map-1.png" alt="" width="100%" />
 
 ### NTA 2020
 
@@ -258,7 +258,7 @@ ggplot(nyc_nta20_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-nta20-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-nta20-map-1.png" alt="" width="100%" />
 
 ## Community District Tabulation Areas (CDTAs) 2020
 
@@ -311,7 +311,7 @@ ggplot(nyc_cdtas_2020_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-cdtas-2020-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-cdtas-2020-map-1.png" alt="" width="100%" />
 
 ## Police Precincts
 
@@ -342,7 +342,7 @@ ggplot(nyc_police_precincts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-police-precincts-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-police-precincts-map-1.png" alt="" width="100%" />
 
 ## City Council Districts
 
@@ -373,7 +373,7 @@ ggplot(nyc_city_council_districts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-city-council-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-city-council-map-1.png" alt="" width="100%" />
 
 ## Congressional Districts
 
@@ -404,7 +404,7 @@ ggplot(nyc_congressional_districts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-congressional-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-congressional-map-1.png" alt="" width="100%" />
 
 ## Election Precincts
 
@@ -435,7 +435,7 @@ ggplot(nyc_election_precincts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-election-precincts-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-election-precincts-map-1.png" alt="" width="100%" />
 
 ## School Districts
 
@@ -466,7 +466,7 @@ ggplot(nyc_school_districts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-school-districts-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-school-districts-map-1.png" alt="" width="100%" />
 
 ## State Assembly Districts
 
@@ -497,7 +497,7 @@ ggplot(nyc_state_assembly_districts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-state-assembly-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-state-assembly-map-1.png" alt="" width="100%" />
 
 ## State Senate Districts
 
@@ -528,7 +528,7 @@ ggplot(nyc_state_senate_districts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-state-senate-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-state-senate-map-1.png" alt="" width="100%" />
 
 ## Municipal Court Districts
 
@@ -570,7 +570,7 @@ ggplot(nyc_municipal_court_districts_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-municipal-court-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-municipal-court-map-1.png" alt="" width="100%" />
 
 ## Public Use Microdata Areas (PUMAs)
 
@@ -603,7 +603,7 @@ ggplot(nyc_pumas_2010_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-pumas-2010-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-pumas-2010-map-1.png" alt="" width="100%" />
 
 ### PUMAs 2020
 
@@ -634,7 +634,7 @@ ggplot(nyc_pumas_2020_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-pumas-2020-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-pumas-2020-map-1.png" alt="" width="100%" />
 
 ## Fire Companies
 
@@ -676,7 +676,7 @@ ggplot(nyc_fire_companies_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-fire-companies-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-fire-companies-map-1.png" alt="" width="100%" />
 
 ## Census Tracts
 
@@ -726,7 +726,7 @@ ggplot(nyc_census_tracts_2000_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-census-tracts-2000-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-census-tracts-2000-map-1.png" alt="" width="100%" />
 
 ### Census Tracts 2010
 
@@ -774,7 +774,7 @@ ggplot(nyc_census_tracts_2010_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-census-tracts-2010-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-census-tracts-2010-map-1.png" alt="" width="100%" />
 
 ### Census Tracts 2020
 
@@ -823,7 +823,135 @@ ggplot(nyc_census_tracts_2020_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-census-tracts-2020-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-census-tracts-2020-map-1.png" alt="" width="100%" />
+
+## Census Blocks
+
+### Census Blocks 2000
+
+``` r
+nyc_census_blocks_2000_sf
+#> Simple feature collection with 36721 features and 7 fields
+#> Geometry type: MULTIPOLYGON
+#> Dimension:     XY
+#> Bounding box:  xmin: 913175.1 ymin: 120121.9 xmax: 1067383 ymax: 272844.3
+#> Projected CRS: NAD83 / New York Long Island (ftUS)
+#> First 10 features:
+#>      bctcb2000 cb2000 boro_code boro_name ct2000 shape_leng  shape_area
+#> 1  10001001000   1000         1 Manhattan 000100  6627.8582 1204254.996
+#> 2  10002011000   1000         1 Manhattan 000201  1565.8519  127283.120
+#> 3  10002021000   1000         1 Manhattan 000202  1187.8839   57115.937
+#> 4  10005001000   1000         1 Manhattan 000500 23821.6173  528518.739
+#> 5  10006001000   1000         1 Manhattan 000600  1352.3708  106094.568
+#> 6  10007001000   1000         1 Manhattan 000700   930.7537   50021.645
+#> 7  10008001000   1000         1 Manhattan 000800   530.0671   13818.523
+#> 8  10009001000   1000         1 Manhattan 000900  1596.6596  147868.271
+#> 9  10010011000   1000         1 Manhattan 001001   714.1657   29763.941
+#> 10 10010021000   1000         1 Manhattan 001002   188.6376    2305.824
+#>                          geometry
+#> 1  MULTIPOLYGON (((973172.7 19...
+#> 2  MULTIPOLYGON (((988340.9 19...
+#> 3  MULTIPOLYGON (((989805 1993...
+#> 4  MULTIPOLYGON (((979605.8 19...
+#> 5  MULTIPOLYGON (((987836.9 19...
+#> 6  MULTIPOLYGON (((982933.4 19...
+#> 7  MULTIPOLYGON (((986338 1993...
+#> 8  MULTIPOLYGON (((981069.3 19...
+#> 9  MULTIPOLYGON (((990732.4 19...
+#> 10 MULTIPOLYGON (((991201.3 20...
+```
+
+``` r
+ggplot(nyc_census_blocks_2000_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+<img src="man/figures/README-nyc-census-blocks-2000-map-1.png" alt="" width="100%" />
+
+### Census Blocks 2010
+
+``` r
+nyc_census_blocks_2010_sf
+#> Simple feature collection with 38797 features and 7 fields
+#> Geometry type: MULTIPOLYGON
+#> Dimension:     XY
+#> Bounding box:  xmin: 913175.1 ymin: 120128.4 xmax: 1067383 ymax: 272844.3
+#> Projected CRS: NAD83 / New York Long Island (ftUS)
+#> First 10 features:
+#>    cb2010 boro_code     boro_name ct2010   bctcb2010 shape_leng shape_area
+#> 1    1000         5 Staten Island 000900 50009001000   2508.948  244589.57
+#> 2    1000         5 Staten Island 002001 50020011000   1345.886  111006.26
+#> 3    1000         5 Staten Island 002700 50027001000   1703.381  150406.77
+#> 4    1000         5 Staten Island 004000 50040001000   1511.174  141296.56
+#> 5    1000         5 Staten Island 006400 50064001000   1978.244  200784.98
+#> 6    1000         5 Staten Island 007400 50074001000   1540.876  139084.02
+#> 7    1000         5 Staten Island 007500 50075001000   1412.643  123560.55
+#> 8    1000         5 Staten Island 007700 50077001000   2421.037  205770.94
+#> 9    1000         5 Staten Island 011202 50112021000   1233.682   92737.75
+#> 10   1000         5 Staten Island 011401 50114011000   1094.120   66684.10
+#>                          geometry
+#> 1  MULTIPOLYGON (((962269.1 17...
+#> 2  MULTIPOLYGON (((964642.3 16...
+#> 3  MULTIPOLYGON (((963363.1 16...
+#> 4  MULTIPOLYGON (((960070 1619...
+#> 5  MULTIPOLYGON (((963023.9 15...
+#> 6  MULTIPOLYGON (((965950.6 15...
+#> 7  MULTIPOLYGON (((960467.3 17...
+#> 8  MULTIPOLYGON (((960079.6 17...
+#> 9  MULTIPOLYGON (((956638.1 15...
+#> 10 MULTIPOLYGON (((957255.3 15...
+```
+
+``` r
+ggplot(nyc_census_blocks_2010_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+<img src="man/figures/README-nyc-census-blocks-2010-map-1.png" alt="" width="100%" />
+
+### Census Blocks 2020
+
+``` r
+nyc_census_blocks_2020_sf
+#> Simple feature collection with 37588 features and 8 fields
+#> Geometry type: MULTIPOLYGON
+#> Dimension:     XY
+#> Bounding box:  xmin: 913175.1 ymin: 120128.4 xmax: 1067383 ymax: 272844.3
+#> Projected CRS: NAD83 / New York Long Island (ftUS)
+#> First 10 features:
+#>    cb2020 boro_code boro_name ct2020   bctcb2020           geoid shape_leng
+#> 1    1000         1 Manhattan 000100 10001001000 360610001001000  6437.8537
+#> 2    1001         1 Manhattan 000100 10001001001 360610001001001  4395.1902
+#> 3    1000         1 Manhattan 000201 10002011000 360610002011000  1569.3848
+#> 4    1001         1 Manhattan 000201 10002011001 360610002011001  1594.2629
+#> 5    2000         1 Manhattan 000201 10002012000 360610002012000  2055.2960
+#> 6    1000         1 Manhattan 000202 10002021000 360610002021000  1187.8841
+#> 7    1003         1 Manhattan 000202 10002021003 360610002021003   732.8414
+#> 8    1004         1 Manhattan 000202 10002021004 360610002021004  1158.4129
+#> 9    2000         1 Manhattan 000202 10002022000 360610002022000  2178.7774
+#> 10   2001         1 Manhattan 000202 10002022001 360610002022001  2113.9173
+#>    shape_area                       geometry
+#> 1  1202838.17 MULTIPOLYGON (((973172.7 19...
+#> 2   640166.35 MULTIPOLYGON (((972081.8 19...
+#> 3   129276.33 MULTIPOLYGON (((988376.7 19...
+#> 4   139360.45 MULTIPOLYGON (((988392.4 19...
+#> 5   263308.44 MULTIPOLYGON (((988422.2 19...
+#> 6    57115.98 MULTIPOLYGON (((989805 1993...
+#> 7    26020.57 MULTIPOLYGON (((988376.7 19...
+#> 8    82791.72 MULTIPOLYGON (((988718.2 19...
+#> 9   157313.54 MULTIPOLYGON (((989275.1 19...
+#> 10  173815.26 MULTIPOLYGON (((988874.9 19...
+```
+
+``` r
+ggplot(nyc_census_blocks_2020_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+<img src="man/figures/README-nyc-census-blocks-2020-map-1.png" alt="" width="100%" />
 
 ## Atomic Polygons
 
@@ -864,7 +992,7 @@ ggplot(nyc_atomic_polygons_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-atomic-polygons-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-atomic-polygons-map-1.png" alt="" width="100%" />
 
 ## Census Tract Population Proportions 2010-2020
 
@@ -992,4 +1120,4 @@ ggplot(nyc_shoclip_sf) +
   theme_void()
 ```
 
-<img src="man/figures/README-nyc-shoclip-map-1.png" width="100%" />
+<img src="man/figures/README-nyc-shoclip-map-1.png" alt="" width="100%" />

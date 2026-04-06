@@ -4,7 +4,7 @@ Version: 0.0.1.9000
 Authors@R:
     person("Kieran", "Healy", , "kjhealy@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "https://orcid.org/0000-0001-9114-981X"))
-Description: What the package does (one paragraph).
+Description: Simple features boundary files for New York City across various administrative and Census geographies.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

@@ -57,6 +57,13 @@ reference:
       - nyc_census_tracts_2020_sf
       - nyc_atomic_polygons_sf
 
+  - title: "Census Blocks"
+    desc: Census block boundaries for 2000, 2010, and 2020.
+    contents:
+      - nyc_census_blocks_2000_sf
+      - nyc_census_blocks_2010_sf
+      - nyc_census_blocks_2020_sf
+
   - title: "Emergency Services"
     desc: Police precincts and fire company boundaries.
     contents:
