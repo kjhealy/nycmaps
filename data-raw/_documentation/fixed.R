@@ -3,6 +3,7 @@
 #' Simple Features collection of NYC Zip Codes
 #'
 #' Polygons of NYC zip codes along with 2019 ACS population estimate.
+#' EPSG:2263, NAD83 / New York Long Island (ftUS).
 #'
 #' @format ## `nyc_zip_sf`
 #' A simple feature collection with 212 rows and 4 columns:

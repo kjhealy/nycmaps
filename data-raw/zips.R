@@ -77,6 +77,7 @@ nyc_zip_sf <- get_acs(
 ) |>
   select(-c(variable, moe)) |>
   rename(zip = GEOID, pop = estimate, zip_name = NAME) |>
-  filter(zip %in% nyc_zips$zip)
+  filter(zip %in% nyc_zips$zip) |>
+  st_transform(crs = st_crs("EPSG:2263"))
 
 usethis::use_data(nyc_zip_sf, overwrite = TRUE, compress = "xz")

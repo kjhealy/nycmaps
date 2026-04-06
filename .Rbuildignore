@@ -11,3 +11,5 @@ llms.txt
 ^\.vscode$
 ^README.html$
 ^.claude$
+^.vscode$
+^tests$

@@ -23,7 +23,7 @@ Provides sf objects of various New York City geographies (and associated tibbles
 
 ## Installation
 
-You can install the development version of nycmaps like so:
+You can install the development version of nycmaps with:
 
 ``` r
 remotes::install_github("kjhealy/nycmaps")

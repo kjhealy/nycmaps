@@ -24,6 +24,7 @@ nyc_zip_sf
 }
 \description{
 Polygons of NYC zip codes along with 2019 ACS population estimate.
+EPSG:2263, NAD83 / New York Long Island (ftUS).
 }
 \details{
 Geographies and population estimates from US Census Bureau, ACS 5-year estimates (2019).
