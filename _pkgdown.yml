@@ -89,6 +89,10 @@ reference:
       - nyc_ct_ccd_relationships_2023_df
       - nyc_ct_pop_proportion_2010_2020_df
 
+  - title: "Functions"
+    desc: Utility functions.
+    contents:
+      - drop_staten_island
 
 navbar:
   right:
