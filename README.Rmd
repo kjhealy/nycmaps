@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 # nycmaps <img src="man/figures/nycmaps.png" align="right" width="360">
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/kjhealy/nycmaps/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kjhealy/nycmaps/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 Provides sf objects of various New York City geographies (and associated tibbles of identifiers) for drawing thematic maps.

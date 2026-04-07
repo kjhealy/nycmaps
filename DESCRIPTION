@@ -1,6 +1,6 @@
 Package: nycmaps
 Title: A collection of sf objects and related tibbles for making maps of New York City
-Version: 0.0.1.9000
+Version: 0.0.2
 Authors@R:
     person("Kieran", "Healy", , "kjhealy@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "https://orcid.org/0000-0001-9114-981X"))

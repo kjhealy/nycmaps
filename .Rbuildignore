@@ -13,3 +13,4 @@ llms.txt
 ^.claude$
 ^.vscode$
 ^tests$
+^\.github$
