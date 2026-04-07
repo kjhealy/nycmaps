@@ -781,4 +781,3 @@
 #' @author Kieran Healy
 #' @source <https://www.nyc.gov/content/planning/pages/resources#datasets>
 "nyc_state_senate_districts_sf"
-

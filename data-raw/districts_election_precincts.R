@@ -2,7 +2,11 @@
 
 source(here::here("data-raw", "_shared.R"))
 
-districts_rawpath <- here("data-raw", "districts_election_precincts", "nyed_25c")
+districts_rawpath <- here(
+  "data-raw",
+  "districts_election_precincts",
+  "nyed_25c"
+)
 
 nyc_election_precincts_sf <- st_read(here(
   districts_rawpath,
