@@ -119,3 +119,10 @@ Data frames describing relationships between geographic areas.
   : NYC Census Tract to City Council District Relationships 2023
 - [`nyc_ct_pop_proportion_2010_2020_df`](https://kjhealy.github.io/nycmaps/reference/nyc_ct_pop_proportion_2010_2020_df.md)
   : NYC Census Tract Population Proportions 2010 to 2020
+
+## Functions
+
+Utility functions.
+
+- [`drop_staten_island()`](https://kjhealy.github.io/nycmaps/reference/drop_staten_island.md)
+  : Drop Staten Island from a map
