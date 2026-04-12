@@ -11,12 +11,25 @@ You can install the development version of nycmaps with:
 remotes::install_github("kjhealy/nycmaps")
 ```
 
+Alternatively, install this package from my
+[r-universe](https://kjhealy.r-universe.dev):
+
+``` r
+install.packages(
+  "nycmaps",
+  repos = c("https://kjhealy.r-universe.dev", "https://cloud.r-project.org")
+)
+```
+
+Including `https://cloud.r-project.org` ensures dependencies on CRAN are
+resolved automatically.
+
 ## Load
 
 ``` r
 library(tidyverse)
 #> ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-#> ✔ dplyr     1.2.0     ✔ readr     2.2.0
+#> ✔ dplyr     1.2.1     ✔ readr     2.2.0
 #> ✔ forcats   1.0.1     ✔ stringr   1.6.0
 #> ✔ ggplot2   4.0.2     ✔ tibble    3.3.1
 #> ✔ lubridate 1.9.5     ✔ tidyr     1.3.2

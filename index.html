@@ -57,14 +57,21 @@
 <p>You can install the development version of nycmaps with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"kjhealy/nycmaps"</span><span class="op">)</span></span></code></pre></div>
+<p>Alternatively, install this package from my <a href="https://kjhealy.r-universe.dev" class="external-link">r-universe</a>:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span></span>
+<span>  <span class="st">"nycmaps"</span>,</span>
+<span>  repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"https://kjhealy.r-universe.dev"</span>, <span class="st">"https://cloud.r-project.org"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>Including <code>https://cloud.r-project.org</code> ensures dependencies on CRAN are resolved automatically.</p>
 </div>
 <div class="section level2">
 <h2 id="load">Load<a class="anchor" aria-label="anchor" href="#load"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──</span></span>
-<span><span class="co">#&gt; ✔ dplyr     1.2.0     ✔ readr     2.2.0</span></span>
+<span><span class="co">#&gt; ✔ dplyr     1.2.1     ✔ readr     2.2.0</span></span>
 <span><span class="co">#&gt; ✔ forcats   1.0.1     ✔ stringr   1.6.0</span></span>
 <span><span class="co">#&gt; ✔ ggplot2   4.0.2     ✔ tibble    3.3.1</span></span>
 <span><span class="co">#&gt; ✔ lubridate 1.9.5     ✔ tidyr     1.3.2</span></span>
@@ -84,7 +91,7 @@
 <div class="section level2">
 <h2 id="borough-boundaries">Borough Boundaries<a class="anchor" aria-label="anchor" href="#borough-boundaries"></a>
 </h2>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_boros</span></span>
 <span><span class="co">#&gt; # A tibble: 5 × 5</span></span>
 <span><span class="co">#&gt;   boro_code boro_name     county_name     short_county_name long_county_name    </span></span>
@@ -107,7 +114,7 @@
 <span><span class="co">#&gt; 3         3      Brooklyn   726953.0 1934462608 MULTIPOLYGON (((1022227 152...</span></span>
 <span><span class="co">#&gt; 4         4        Queens   887905.1 3041419184 MULTIPOLYGON (((1032452 154...</span></span>
 <span><span class="co">#&gt; 5         1     Manhattan   359193.9  636627850 MULTIPOLYGON (((981219.1 18...</span></span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_boros_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -116,7 +123,7 @@
 <div class="section level2">
 <h2 id="zip-codes-zctas">Zip Codes (ZCTAs)<a class="anchor" aria-label="anchor" href="#zip-codes-zctas"></a>
 </h2>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_zips</span></span>
 <span><span class="co">#&gt; # A tibble: 255 × 7</span></span>
 <span><span class="co">#&gt;    zip   boro_name city_name county_name     long_county_name  short_county_name</span></span>
@@ -153,7 +160,7 @@
 <span><span class="co">#&gt; 9  11365 ZCTA5 11365 44738 MULTIPOLYGON (((1035744 211...</span></span>
 <span><span class="co">#&gt; 10 11205 ZCTA5 11205 46843 MULTIPOLYGON (((989733.3 19...</span></span></code></pre></div>
 <p>Notice that we have more zip codes in <code>nyc_zips</code> than zctas in <code>nyc_zip_sf</code>. Several of these zip codes are for PO Boxes or otherwise non-residential (like LGA and Fort Totten Park).</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_zip_sf</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">pop</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Simple feature collection with 28 features and 3 fields</span></span>
@@ -173,7 +180,7 @@
 <span><span class="co">#&gt; 8  10177 ZCTA5 10177   0 MULTIPOLYGON (((990756.3 21...</span></span>
 <span><span class="co">#&gt; 9  10111 ZCTA5 10111   0 MULTIPOLYGON (((990220.1 21...</span></span>
 <span><span class="co">#&gt; 10 10152 ZCTA5 10152   0 MULTIPOLYGON (((991837.2 21...</span></span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_zip_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -185,7 +192,7 @@
 <div class="section level3">
 <h3 id="nta-2010">NTA 2010<a class="anchor" aria-label="anchor" href="#nta-2010"></a>
 </h3>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_nta10_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 195 features and 7 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -226,7 +233,7 @@
 <span><span class="co">#&gt; 8  MULTIPOLYGON (((1035407 211...</span></span>
 <span><span class="co">#&gt; 9  MULTIPOLYGON (((926730.6 14...</span></span>
 <span><span class="co">#&gt; 10 MULTIPOLYGON (((1004850 172...</span></span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_nta10_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -235,7 +242,7 @@
 <div class="section level3">
 <h3 id="nta-2020">NTA 2020<a class="anchor" aria-label="anchor" href="#nta-2020"></a>
 </h3>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_nta20_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 262 features and 11 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -287,7 +294,7 @@
 <span><span class="co">#&gt; 8    14566585 MULTIPOLYGON (((994971 1871...</span></span>
 <span><span class="co">#&gt; 9    10106807 MULTIPOLYGON (((990092 1964...</span></span>
 <span><span class="co">#&gt; 10   36906699 MULTIPOLYGON (((999743.6 18...</span></span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_nta20_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -297,7 +304,7 @@
 <div class="section level2">
 <h2 id="community-district-tabulation-areas-cdtas-2020">Community District Tabulation Areas (CDTAs) 2020<a class="anchor" aria-label="anchor" href="#community-district-tabulation-areas-cdtas-2020"></a>
 </h2>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_cdtas_2020_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 71 features and 8 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -338,7 +345,7 @@
 <span><span class="co">#&gt; 8    46939593 MULTIPOLYGON (((994971 1871...</span></span>
 <span><span class="co">#&gt; 9    44093657 MULTIPOLYGON (((1004025 181...</span></span>
 <span><span class="co">#&gt; 10  109208853 MULTIPOLYGON (((975287.1 17...</span></span></code></pre></div>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_cdtas_2020_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -347,7 +354,7 @@
 <div class="section level2">
 <h2 id="police-precincts">Police Precincts<a class="anchor" aria-label="anchor" href="#police-precincts"></a>
 </h2>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_police_precincts_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 78 features and 3 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -366,7 +373,7 @@
 <span><span class="co">#&gt; 8        14   20973.81   20511123 MULTIPOLYGON (((991274 2137...</span></span>
 <span><span class="co">#&gt; 9        17   26719.68   22268768 MULTIPOLYGON (((994166.3 21...</span></span>
 <span><span class="co">#&gt; 10       18   41625.18   32250200 MULTIPOLYGON (((985929.4 22...</span></span></code></pre></div>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_police_precincts_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -375,7 +382,7 @@
 <div class="section level2">
 <h2 id="city-council-districts">City Council Districts<a class="anchor" aria-label="anchor" href="#city-council-districts"></a>
 </h2>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_city_council_districts_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 51 features and 3 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -394,7 +401,7 @@
 <span><span class="co">#&gt; 8         29   61867.75  127849354 MULTIPOLYGON (((1035761 193...</span></span>
 <span><span class="co">#&gt; 9         51  208078.35  657989092 MULTIPOLYGON (((952739.3 13...</span></span>
 <span><span class="co">#&gt; 10        23   84551.73  311520682 MULTIPOLYGON (((1059187 201...</span></span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_city_council_districts_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -403,7 +410,7 @@
 <div class="section level2">
 <h2 id="congressional-districts">Congressional Districts<a class="anchor" aria-label="anchor" href="#congressional-districts"></a>
 </h2>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_congressional_districts_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 13 features and 3 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -422,7 +429,7 @@
 <span><span class="co">#&gt; 8         12  163510.13  271781952 MULTIPOLYGON (((994681.4 20...</span></span>
 <span><span class="co">#&gt; 9          9  117420.51  423789158 MULTIPOLYGON (((990773.6 15...</span></span>
 <span><span class="co">#&gt; 10         8  581728.95  741446257 MULTIPOLYGON (((1022227 152...</span></span></code></pre></div>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_congressional_districts_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -431,7 +438,7 @@
 <div class="section level2">
 <h2 id="election-precincts">Election Precincts<a class="anchor" aria-label="anchor" href="#election-precincts"></a>
 </h2>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_election_precincts_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 4264 features and 3 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -450,7 +457,7 @@
 <span><span class="co">#&gt; 8       23008   9227.254    3228737 MULTIPOLYGON (((1029719 149...</span></span>
 <span><span class="co">#&gt; 9       23010   9732.741    4133088 MULTIPOLYGON (((1033877 151...</span></span>
 <span><span class="co">#&gt; 10      23011   7973.345    2931564 MULTIPOLYGON (((1034940 151...</span></span></code></pre></div>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_election_precincts_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -459,7 +466,7 @@
 <div class="section level2">
 <h2 id="school-districts">School Districts<a class="anchor" aria-label="anchor" href="#school-districts"></a>
 </h2>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_school_districts_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 33 features and 3 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -478,7 +485,7 @@
 <span><span class="co">#&gt; 8           18  120925.18  175191727 MULTIPOLYGON (((1022227 152...</span></span>
 <span><span class="co">#&gt; 9           26  131630.79  424301106 MULTIPOLYGON (((1054980 223...</span></span>
 <span><span class="co">#&gt; 10          29  135111.04  420205351 MULTIPOLYGON (((1056821 204...</span></span></code></pre></div>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_school_districts_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -487,7 +494,7 @@
 <div class="section level2">
 <h2 id="state-assembly-districts">State Assembly Districts<a class="anchor" aria-label="anchor" href="#state-assembly-districts"></a>
 </h2>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_state_assembly_districts_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 65 features and 3 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -506,7 +513,7 @@
 <span><span class="co">#&gt; 8          66   53046.46   55508067 MULTIPOLYGON (((986404.7 20...</span></span>
 <span><span class="co">#&gt; 9          67   67713.47   42987449 MULTIPOLYGON (((994296.5 22...</span></span>
 <span><span class="co">#&gt; 10         75   63372.73   74042940 MULTIPOLYGON (((993379.4 22...</span></span></code></pre></div>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_state_assembly_districts_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -515,7 +522,7 @@
 <div class="section level2">
 <h2 id="state-senate-districts">State Senate Districts<a class="anchor" aria-label="anchor" href="#state-senate-districts"></a>
 </h2>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_state_senate_districts_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 28 features and 3 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -534,7 +541,7 @@
 <span><span class="co">#&gt; 8           24  283889.38 1287481786 MULTIPOLYGON (((970217 1456...</span></span>
 <span><span class="co">#&gt; 9           21  114011.07  219693845 MULTIPOLYGON (((1006234 177...</span></span>
 <span><span class="co">#&gt; 10          28   95721.67  121827370 MULTIPOLYGON (((995988.3 21...</span></span></code></pre></div>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_state_senate_districts_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -543,7 +550,7 @@
 <div class="section level2">
 <h2 id="municipal-court-districts">Municipal Court Districts<a class="anchor" aria-label="anchor" href="#municipal-court-districts"></a>
 </h2>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_municipal_court_districts_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 28 features and 5 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -573,7 +580,7 @@
 <span><span class="co">#&gt; 8  MULTIPOLYGON (((1006029 231...</span></span>
 <span><span class="co">#&gt; 9  MULTIPOLYGON (((1019866 171...</span></span>
 <span><span class="co">#&gt; 10 MULTIPOLYGON (((1004602 259...</span></span></code></pre></div>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_municipal_court_districts_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -585,7 +592,7 @@
 <div class="section level3">
 <h3 id="pumas-2010">PUMAs 2010<a class="anchor" aria-label="anchor" href="#pumas-2010"></a>
 </h3>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_pumas_2010_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 55 features and 3 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -604,7 +611,7 @@
 <span><span class="co">#&gt; 8  3708   35002.65   55879734 MULTIPOLYGON (((1005292 247...</span></span>
 <span><span class="co">#&gt; 9  3709   73295.40  124116532 MULTIPOLYGON (((1029456 237...</span></span>
 <span><span class="co">#&gt; 10 3710   90061.99  137759772 MULTIPOLYGON (((1012822 229...</span></span></code></pre></div>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_pumas_2010_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -613,7 +620,7 @@
 <div class="section level3">
 <h3 id="pumas-2020">PUMAs 2020<a class="anchor" aria-label="anchor" href="#pumas-2020"></a>
 </h3>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_pumas_2020_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 55 features and 3 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -632,7 +639,7 @@
 <span><span class="co">#&gt; 8  4112   62521.40   81279102 MULTIPOLYGON (((1004602 259...</span></span>
 <span><span class="co">#&gt; 9  4121  120223.29   82729002 MULTIPOLYGON (((981219.1 18...</span></span>
 <span><span class="co">#&gt; 10 4165   49051.32   82533592 MULTIPOLYGON (((994681.4 20...</span></span></code></pre></div>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_pumas_2020_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -642,7 +649,7 @@
 <div class="section level2">
 <h2 id="fire-companies">Fire Companies<a class="anchor" aria-label="anchor" href="#fire-companies"></a>
 </h2>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_fire_companies_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 348 features and 6 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -672,7 +679,7 @@
 <span><span class="co">#&gt; 8  MULTIPOLYGON (((1008843 210...</span></span>
 <span><span class="co">#&gt; 9  MULTIPOLYGON (((1017787 189...</span></span>
 <span><span class="co">#&gt; 10 MULTIPOLYGON (((989106.6 21...</span></span></code></pre></div>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_fire_companies_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -684,7 +691,7 @@
 <div class="section level3">
 <h3 id="census-tracts-2000">Census Tracts 2000<a class="anchor" aria-label="anchor" href="#census-tracts-2000"></a>
 </h3>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_census_tracts_2000_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 2216 features and 11 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -725,7 +732,7 @@
 <span><span class="co">#&gt; 8  MULTIPOLYGON (((1004253 249...</span></span>
 <span><span class="co">#&gt; 9  MULTIPOLYGON (((992216.5 21...</span></span>
 <span><span class="co">#&gt; 10 MULTIPOLYGON (((991325.9 21...</span></span></code></pre></div>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_census_tracts_2000_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -734,7 +741,7 @@
 <div class="section level3">
 <h3 id="census-tracts-2010">Census Tracts 2010<a class="anchor" aria-label="anchor" href="#census-tracts-2010"></a>
 </h3>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_census_tracts_2010_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 2165 features and 11 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -775,7 +782,7 @@
 <span><span class="co">#&gt; 8  MULTIPOLYGON (((1001768 244...</span></span>
 <span><span class="co">#&gt; 9  MULTIPOLYGON (((1004253 249...</span></span>
 <span><span class="co">#&gt; 10 MULTIPOLYGON (((986186 1933...</span></span></code></pre></div>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_census_tracts_2010_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -784,7 +791,7 @@
 <div class="section level3">
 <h3 id="census-tracts-2020">Census Tracts 2020<a class="anchor" aria-label="anchor" href="#census-tracts-2020"></a>
 </h3>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_census_tracts_2020_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 2325 features and 14 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -836,7 +843,7 @@
 <span><span class="co">#&gt; 8    5503.307  1718451.6 MULTIPOLYGON (((990340 2050...</span></span>
 <span><span class="co">#&gt; 9    4201.295  1082296.2 MULTIPOLYGON (((987399.2 20...</span></span>
 <span><span class="co">#&gt; 10   4076.250   961070.5 MULTIPOLYGON (((987717.2 20...</span></span></code></pre></div>
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_census_tracts_2020_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -849,7 +856,7 @@
 <div class="section level3">
 <h3 id="census-blocks-2000">Census Blocks 2000<a class="anchor" aria-label="anchor" href="#census-blocks-2000"></a>
 </h3>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_census_blocks_2000_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 36721 features and 7 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -879,7 +886,7 @@
 <span><span class="co">#&gt; 8  MULTIPOLYGON (((981069.3 19...</span></span>
 <span><span class="co">#&gt; 9  MULTIPOLYGON (((990732.4 19...</span></span>
 <span><span class="co">#&gt; 10 MULTIPOLYGON (((991201.3 20...</span></span></code></pre></div>
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_census_blocks_2000_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -888,7 +895,7 @@
 <div class="section level3">
 <h3 id="census-blocks-2010">Census Blocks 2010<a class="anchor" aria-label="anchor" href="#census-blocks-2010"></a>
 </h3>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_census_blocks_2010_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 38797 features and 7 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -918,7 +925,7 @@
 <span><span class="co">#&gt; 8  MULTIPOLYGON (((960079.6 17...</span></span>
 <span><span class="co">#&gt; 9  MULTIPOLYGON (((956638.1 15...</span></span>
 <span><span class="co">#&gt; 10 MULTIPOLYGON (((957255.3 15...</span></span></code></pre></div>
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_census_blocks_2010_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -927,7 +934,7 @@
 <div class="section level3">
 <h3 id="census-blocks-2020">Census Blocks 2020<a class="anchor" aria-label="anchor" href="#census-blocks-2020"></a>
 </h3>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_census_blocks_2020_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 37588 features and 8 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -957,7 +964,7 @@
 <span><span class="co">#&gt; 8    82791.72 MULTIPOLYGON (((988718.2 19...</span></span>
 <span><span class="co">#&gt; 9   157313.54 MULTIPOLYGON (((989275.1 19...</span></span>
 <span><span class="co">#&gt; 10  173815.26 MULTIPOLYGON (((988874.9 19...</span></span></code></pre></div>
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_census_blocks_2020_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -967,7 +974,7 @@
 <div class="section level2">
 <h2 id="atomic-polygons">Atomic Polygons<a class="anchor" aria-label="anchor" href="#atomic-polygons"></a>
 </h2>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_atomic_polygons_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 69690 features and 29 fields</span></span>
 <span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
@@ -1030,7 +1037,7 @@
 <span><span class="co">#&gt; 8    64847.42 MULTIPOLYGON (((915016.6 12...</span></span>
 <span><span class="co">#&gt; 9   133972.42 MULTIPOLYGON (((916170.7 12...</span></span>
 <span><span class="co">#&gt; 10  136178.82 MULTIPOLYGON (((916661.1 12...</span></span></code></pre></div>
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_atomic_polygons_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -1039,7 +1046,7 @@
 <div class="section level2">
 <h2 id="census-tract-population-proportions-2010-2020">Census Tract Population Proportions 2010-2020<a class="anchor" aria-label="anchor" href="#census-tract-population-proportions-2010-2020"></a>
 </h2>
-<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_ct_pop_proportion_2010_2020_df</span></span>
 <span><span class="co">#&gt; # A tibble: 2,416 × 8</span></span>
 <span><span class="co">#&gt;    boro_code county_fips boro_name bct2020 fipsct2020 bct2010 fipsct2010</span></span>
@@ -1060,7 +1067,7 @@
 <div class="section level2">
 <h2 id="census-block-relationships-2020">Census Block Relationships 2020<a class="anchor" aria-label="anchor" href="#census-block-relationships-2020"></a>
 </h2>
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_census_block_relationships_2020_df</span></span>
 <span><span class="co">#&gt; # A tibble: 37,984 × 17</span></span>
 <span><span class="co">#&gt;    geoid   county_fips boro_code boro_name bctcb2020 cb2020 cb_label boro_ct2020</span></span>
@@ -1083,7 +1090,7 @@
 <div class="section level2">
 <h2 id="census-tract-to-city-council-district-relationships-2023">Census Tract to City Council District Relationships 2023<a class="anchor" aria-label="anchor" href="#census-tract-to-city-council-district-relationships-2023"></a>
 </h2>
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_ct_ccd_relationships_2023_df</span></span>
 <span><span class="co">#&gt; # A tibble: 2,327 × 8</span></span>
 <span><span class="co">#&gt;    geoid     county_fips boro_code boro_name boro_ct2020 ct2020 ct_label ccd2023</span></span>
@@ -1103,7 +1110,7 @@
 <div class="section level2">
 <h2 id="census-tract-relationships-2020">Census Tract Relationships 2020<a class="anchor" aria-label="anchor" href="#census-tract-relationships-2020"></a>
 </h2>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_census_tract_relationships_2020_df</span></span>
 <span><span class="co">#&gt; # A tibble: 2,327 × 14</span></span>
 <span><span class="co">#&gt;    geoid    county_fips boro_code boro_name boro_ct2020 ct2020 ct_label nta_code</span></span>
@@ -1125,7 +1132,7 @@
 <div class="section level2">
 <h2 id="shoreline-with-adjacent-areas">Shoreline with Adjacent Areas<a class="anchor" aria-label="anchor" href="#shoreline-with-adjacent-areas"></a>
 </h2>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nyc_shoclip_sf</span></span>
 <span><span class="co">#&gt; Simple feature collection with 7426 features and 15 fields (with 222 geometries empty)</span></span>
 <span><span class="co">#&gt; Geometry type: GEOMETRY</span></span>
@@ -1166,7 +1173,7 @@
 <span><span class="co">#&gt; 8          NY North Atlantic 2.277028e-05 LINESTRING (1004156 151828....</span></span>
 <span><span class="co">#&gt; 9          NY North Atlantic 3.005030e-04 LINESTRING (1010057 163796,...</span></span>
 <span><span class="co">#&gt; 10         NY North Atlantic 2.010112e-04 LINESTRING (1009808 164187....</span></span></code></pre></div>
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span><span class="va">nyc_shoclip_sf</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -1210,6 +1217,7 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://github.com/kjhealy/nycmaps/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/kjhealy/nycmaps/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://kjhealy.r-universe.dev/nycmaps" class="external-link"><img src="https://kjhealy.r-universe.dev/nycmaps/badges/version" alt="R-universe version"></a></li>
 </ul>
 </div>
 
