@@ -8,6 +8,7 @@ tibbles of identifiers) for drawing thematic maps.
 You can install the development version of nycmaps with:
 
 ``` r
+
 remotes::install_github("kjhealy/nycmaps")
 ```
 
@@ -15,6 +16,7 @@ Alternatively, install this package from my
 [r-universe](https://kjhealy.r-universe.dev):
 
 ``` r
+
 install.packages(
   "nycmaps",
   repos = c("https://kjhealy.r-universe.dev", "https://cloud.r-project.org")
@@ -27,6 +29,7 @@ resolved automatically.
 ## Load
 
 ``` r
+
 library(tidyverse)
 #> ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 #> ✔ dplyr     1.2.1     ✔ readr     2.2.0
@@ -48,6 +51,7 @@ library(nycmaps)
 ## Borough Boundaries
 
 ``` r
+
 nyc_boros
 #> # A tibble: 5 × 5
 #>   boro_code boro_name     county_name     short_county_name long_county_name    
@@ -73,6 +77,7 @@ nyc_boros_sf
 ```
 
 ``` r
+
 ggplot(nyc_boros_sf) +
   geom_sf() +
   theme_void()
@@ -83,6 +88,7 @@ ggplot(nyc_boros_sf) +
 ## Zip Codes (ZCTAs)
 
 ``` r
+
 nyc_zips
 #> # A tibble: 255 × 7
 #>    zip   boro_name city_name county_name     long_county_name  short_county_name
@@ -125,6 +131,7 @@ Notice that we have more zip codes in `nyc_zips` than zctas in
 non-residential (like LGA and Fort Totten Park).
 
 ``` r
+
 nyc_zip_sf |>
   filter(pop == 0)
 #> Simple feature collection with 28 features and 3 fields
@@ -147,6 +154,7 @@ nyc_zip_sf |>
 ```
 
 ``` r
+
 ggplot(nyc_zip_sf) +
   geom_sf() +
   theme_void()
@@ -159,6 +167,7 @@ ggplot(nyc_zip_sf) +
 ### NTA 2010
 
 ``` r
+
 nyc_nta10_sf
 #> Simple feature collection with 195 features and 7 fields
 #> Geometry type: MULTIPOLYGON
@@ -202,6 +211,7 @@ nyc_nta10_sf
 ```
 
 ``` r
+
 ggplot(nyc_nta10_sf) +
   geom_sf() +
   theme_void()
@@ -212,6 +222,7 @@ ggplot(nyc_nta10_sf) +
 ### NTA 2020
 
 ``` r
+
 nyc_nta20_sf
 #> Simple feature collection with 262 features and 11 fields
 #> Geometry type: MULTIPOLYGON
@@ -266,6 +277,7 @@ nyc_nta20_sf
 ```
 
 ``` r
+
 ggplot(nyc_nta20_sf) +
   geom_sf() +
   theme_void()
@@ -276,6 +288,7 @@ ggplot(nyc_nta20_sf) +
 ## Community District Tabulation Areas (CDTAs) 2020
 
 ``` r
+
 nyc_cdtas_2020_sf
 #> Simple feature collection with 71 features and 8 fields
 #> Geometry type: MULTIPOLYGON
@@ -319,6 +332,7 @@ nyc_cdtas_2020_sf
 ```
 
 ``` r
+
 ggplot(nyc_cdtas_2020_sf) +
   geom_sf() +
   theme_void()
@@ -329,6 +343,7 @@ ggplot(nyc_cdtas_2020_sf) +
 ## Police Precincts
 
 ``` r
+
 nyc_police_precincts_sf
 #> Simple feature collection with 78 features and 3 fields
 #> Geometry type: MULTIPOLYGON
@@ -350,6 +365,7 @@ nyc_police_precincts_sf
 ```
 
 ``` r
+
 ggplot(nyc_police_precincts_sf) +
   geom_sf() +
   theme_void()
@@ -360,6 +376,7 @@ ggplot(nyc_police_precincts_sf) +
 ## City Council Districts
 
 ``` r
+
 nyc_city_council_districts_sf
 #> Simple feature collection with 51 features and 3 fields
 #> Geometry type: MULTIPOLYGON
@@ -381,6 +398,7 @@ nyc_city_council_districts_sf
 ```
 
 ``` r
+
 ggplot(nyc_city_council_districts_sf) +
   geom_sf() +
   theme_void()
@@ -391,6 +409,7 @@ ggplot(nyc_city_council_districts_sf) +
 ## Congressional Districts
 
 ``` r
+
 nyc_congressional_districts_sf
 #> Simple feature collection with 13 features and 3 fields
 #> Geometry type: MULTIPOLYGON
@@ -412,6 +431,7 @@ nyc_congressional_districts_sf
 ```
 
 ``` r
+
 ggplot(nyc_congressional_districts_sf) +
   geom_sf() +
   theme_void()
@@ -422,6 +442,7 @@ ggplot(nyc_congressional_districts_sf) +
 ## Election Precincts
 
 ``` r
+
 nyc_election_precincts_sf
 #> Simple feature collection with 4264 features and 3 fields
 #> Geometry type: MULTIPOLYGON
@@ -443,6 +464,7 @@ nyc_election_precincts_sf
 ```
 
 ``` r
+
 ggplot(nyc_election_precincts_sf) +
   geom_sf() +
   theme_void()
@@ -453,6 +475,7 @@ ggplot(nyc_election_precincts_sf) +
 ## School Districts
 
 ``` r
+
 nyc_school_districts_sf
 #> Simple feature collection with 33 features and 3 fields
 #> Geometry type: MULTIPOLYGON
@@ -474,6 +497,7 @@ nyc_school_districts_sf
 ```
 
 ``` r
+
 ggplot(nyc_school_districts_sf) +
   geom_sf() +
   theme_void()
@@ -484,6 +508,7 @@ ggplot(nyc_school_districts_sf) +
 ## State Assembly Districts
 
 ``` r
+
 nyc_state_assembly_districts_sf
 #> Simple feature collection with 65 features and 3 fields
 #> Geometry type: MULTIPOLYGON
@@ -505,6 +530,7 @@ nyc_state_assembly_districts_sf
 ```
 
 ``` r
+
 ggplot(nyc_state_assembly_districts_sf) +
   geom_sf() +
   theme_void()
@@ -515,6 +541,7 @@ ggplot(nyc_state_assembly_districts_sf) +
 ## State Senate Districts
 
 ``` r
+
 nyc_state_senate_districts_sf
 #> Simple feature collection with 28 features and 3 fields
 #> Geometry type: MULTIPOLYGON
@@ -536,6 +563,7 @@ nyc_state_senate_districts_sf
 ```
 
 ``` r
+
 ggplot(nyc_state_senate_districts_sf) +
   geom_sf() +
   theme_void()
@@ -546,6 +574,7 @@ ggplot(nyc_state_senate_districts_sf) +
 ## Municipal Court Districts
 
 ``` r
+
 nyc_municipal_court_districts_sf
 #> Simple feature collection with 28 features and 5 fields
 #> Geometry type: MULTIPOLYGON
@@ -578,6 +607,7 @@ nyc_municipal_court_districts_sf
 ```
 
 ``` r
+
 ggplot(nyc_municipal_court_districts_sf) +
   geom_sf() +
   theme_void()
@@ -590,6 +620,7 @@ ggplot(nyc_municipal_court_districts_sf) +
 ### PUMAs 2010
 
 ``` r
+
 nyc_pumas_2010_sf
 #> Simple feature collection with 55 features and 3 fields
 #> Geometry type: MULTIPOLYGON
@@ -611,6 +642,7 @@ nyc_pumas_2010_sf
 ```
 
 ``` r
+
 ggplot(nyc_pumas_2010_sf) +
   geom_sf() +
   theme_void()
@@ -621,6 +653,7 @@ ggplot(nyc_pumas_2010_sf) +
 ### PUMAs 2020
 
 ``` r
+
 nyc_pumas_2020_sf
 #> Simple feature collection with 55 features and 3 fields
 #> Geometry type: MULTIPOLYGON
@@ -642,6 +675,7 @@ nyc_pumas_2020_sf
 ```
 
 ``` r
+
 ggplot(nyc_pumas_2020_sf) +
   geom_sf() +
   theme_void()
@@ -652,6 +686,7 @@ ggplot(nyc_pumas_2020_sf) +
 ## Fire Companies
 
 ``` r
+
 nyc_fire_companies_sf
 #> Simple feature collection with 348 features and 6 fields
 #> Geometry type: MULTIPOLYGON
@@ -684,6 +719,7 @@ nyc_fire_companies_sf
 ```
 
 ``` r
+
 ggplot(nyc_fire_companies_sf) +
   geom_sf() +
   theme_void()
@@ -696,6 +732,7 @@ ggplot(nyc_fire_companies_sf) +
 ### Census Tracts 2000
 
 ``` r
+
 nyc_census_tracts_2000_sf
 #> Simple feature collection with 2216 features and 11 fields
 #> Geometry type: MULTIPOLYGON
@@ -739,6 +776,7 @@ nyc_census_tracts_2000_sf
 ```
 
 ``` r
+
 ggplot(nyc_census_tracts_2000_sf) +
   geom_sf() +
   theme_void()
@@ -749,6 +787,7 @@ ggplot(nyc_census_tracts_2000_sf) +
 ### Census Tracts 2010
 
 ``` r
+
 nyc_census_tracts_2010_sf
 #> Simple feature collection with 2165 features and 11 fields
 #> Geometry type: MULTIPOLYGON
@@ -792,6 +831,7 @@ nyc_census_tracts_2010_sf
 ```
 
 ``` r
+
 ggplot(nyc_census_tracts_2010_sf) +
   geom_sf() +
   theme_void()
@@ -802,6 +842,7 @@ ggplot(nyc_census_tracts_2010_sf) +
 ### Census Tracts 2020
 
 ``` r
+
 nyc_census_tracts_2020_sf
 #> Simple feature collection with 2325 features and 14 fields
 #> Geometry type: MULTIPOLYGON
@@ -856,6 +897,7 @@ nyc_census_tracts_2020_sf
 ```
 
 ``` r
+
 ggplot(nyc_census_tracts_2020_sf) +
   geom_sf() +
   theme_void()
@@ -868,6 +910,7 @@ ggplot(nyc_census_tracts_2020_sf) +
 ### Census Blocks 2000
 
 ``` r
+
 nyc_census_blocks_2000_sf
 #> Simple feature collection with 36721 features and 7 fields
 #> Geometry type: MULTIPOLYGON
@@ -900,6 +943,7 @@ nyc_census_blocks_2000_sf
 ```
 
 ``` r
+
 ggplot(nyc_census_blocks_2000_sf) +
   geom_sf() +
   theme_void()
@@ -910,6 +954,7 @@ ggplot(nyc_census_blocks_2000_sf) +
 ### Census Blocks 2010
 
 ``` r
+
 nyc_census_blocks_2010_sf
 #> Simple feature collection with 38797 features and 7 fields
 #> Geometry type: MULTIPOLYGON
@@ -942,6 +987,7 @@ nyc_census_blocks_2010_sf
 ```
 
 ``` r
+
 ggplot(nyc_census_blocks_2010_sf) +
   geom_sf() +
   theme_void()
@@ -952,6 +998,7 @@ ggplot(nyc_census_blocks_2010_sf) +
 ### Census Blocks 2020
 
 ``` r
+
 nyc_census_blocks_2020_sf
 #> Simple feature collection with 37588 features and 8 fields
 #> Geometry type: MULTIPOLYGON
@@ -984,6 +1031,7 @@ nyc_census_blocks_2020_sf
 ```
 
 ``` r
+
 ggplot(nyc_census_blocks_2020_sf) +
   geom_sf() +
   theme_void()
@@ -994,6 +1042,7 @@ ggplot(nyc_census_blocks_2020_sf) +
 ## Atomic Polygons
 
 ``` r
+
 nyc_atomic_polygons_sf
 #> Simple feature collection with 69690 features and 29 fields
 #> Geometry type: MULTIPOLYGON
@@ -1059,6 +1108,7 @@ nyc_atomic_polygons_sf
 ```
 
 ``` r
+
 ggplot(nyc_atomic_polygons_sf) +
   geom_sf() +
   theme_void()
@@ -1069,6 +1119,7 @@ ggplot(nyc_atomic_polygons_sf) +
 ## Census Tract Population Proportions 2010-2020
 
 ``` r
+
 nyc_ct_pop_proportion_2010_2020_df
 #> # A tibble: 2,416 × 8
 #>    boro_code county_fips boro_name bct2020 fipsct2020 bct2010 fipsct2010
@@ -1090,6 +1141,7 @@ nyc_ct_pop_proportion_2010_2020_df
 ## Census Block Relationships 2020
 
 ``` r
+
 nyc_census_block_relationships_2020_df
 #> # A tibble: 37,984 × 17
 #>    geoid   county_fips boro_code boro_name bctcb2020 cb2020 cb_label boro_ct2020
@@ -1113,6 +1165,7 @@ nyc_census_block_relationships_2020_df
 ## Census Tract to City Council District Relationships 2023
 
 ``` r
+
 nyc_ct_ccd_relationships_2023_df
 #> # A tibble: 2,327 × 8
 #>    geoid     county_fips boro_code boro_name boro_ct2020 ct2020 ct_label ccd2023
@@ -1133,6 +1186,7 @@ nyc_ct_ccd_relationships_2023_df
 ## Census Tract Relationships 2020
 
 ``` r
+
 nyc_census_tract_relationships_2020_df
 #> # A tibble: 2,327 × 14
 #>    geoid    county_fips boro_code boro_name boro_ct2020 ct2020 ct_label nta_code
@@ -1155,6 +1209,7 @@ nyc_census_tract_relationships_2020_df
 ## Shoreline with Adjacent Areas
 
 ``` r
+
 nyc_shoclip_sf
 #> Simple feature collection with 7426 features and 15 fields (with 222 geometries empty)
 #> Geometry type: GEOMETRY
@@ -1198,6 +1253,7 @@ nyc_shoclip_sf
 ```
 
 ``` r
+
 ggplot(nyc_shoclip_sf) +
   geom_sf() +
   theme_void()

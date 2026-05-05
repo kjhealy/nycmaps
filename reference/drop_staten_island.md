@@ -1,6 +1,6 @@
 # Drop Staten Island from a map
 
-Crop an `sf` object so that Staten Island is removed. The map is first
+Crop a spatial object so that Staten Island is removed. The map is first
 clipped on the west, just beyond the easternmost point of the Staten
 Island polygon, and then clipped on the south, just below the
 southernmost tip of Breezy Point (the southern tip of Queens).
@@ -15,7 +15,9 @@ drop_staten_island(x, buffer = 10)
 
 - x:
 
-  An `sf` object to crop. Must have a defined CRS.
+  An `sf` object or a
+  [terra::SpatRaster](https://rspatial.github.io/terra/reference/SpatRaster-class.html).
+  Must have a defined CRS.
 
 - buffer:
 
@@ -26,8 +28,13 @@ drop_staten_island(x, buffer = 10)
 
 ## Value
 
-An `sf` object of the same class as `x`, cropped to exclude Staten
-Island.
+An object of the same class as `x`, cropped to exclude Staten Island.
+
+## Details
+
+This is an S3 generic with methods for `sf` objects and
+[terra::SpatRaster](https://rspatial.github.io/terra/reference/SpatRaster-class.html)
+rasters.
 
 ## Examples
 

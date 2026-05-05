@@ -1,5 +1,14 @@
 # Changelog
 
+## nycmaps 0.0.3.9000
+
+- [`drop_staten_island()`](https://kjhealy.github.io/nycmaps/reference/drop_staten_island.md)
+  is now an S3 generic with methods for `sf` objects and
+  [`terra::SpatRaster`](https://rspatial.github.io/terra/reference/SpatRaster-class.html)
+  rasters. The `SpatRaster` method applies the same west-and-south crop
+  window as the `sf` method, using
+  [`terra::crop()`](https://rspatial.github.io/terra/reference/crop.html).
+
 ## nycmaps 0.0.3
 
 - New
