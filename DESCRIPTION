@@ -16,7 +16,8 @@ Suggests:
     tibble (>= 3.0.0)
 LazyData: true
 LazyDataCompression: xz
-URL: https://github.com/kjhealy/nycmaps
+URL: https://kjhealy.github.io/nycmaps/,
+    https://github.com/kjhealy/nycmaps
 BugReports: https://github.com/kjhealy/nycmaps/issues
 Config/testthat/edition: 3
 Imports: 

@@ -23,6 +23,12 @@ reference:
       - nyc_zips
       - nyc_zip_sf
 
+  - title: "Modified Zip Code Tabulation Areas"
+    desc: NYC DOHMH modified ZCTAs (MODZCTAs) and ZCTA crosswalk.
+    contents:
+      - nyc_modzcta_sf
+      - nyc_zcta_modzcta_df
+
   - title: "Neighborhood Tabulation Areas"
     desc: NTA boundaries for 2010 and 2020.
     contents:

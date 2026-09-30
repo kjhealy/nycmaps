@@ -573,6 +573,40 @@
 #' @source <https://www.nyc.gov/content/planning/pages/resources#datasets>
 "nyc_fire_companies_sf"
 
+#' NYC Modified Zip Code Tabulation Areas (MODZCTAs)
+#'
+#' Simple feature collection of the NYC Department of Health and Mental
+#' Hygiene's Modified Zip Code Tabulation Areas.
+#' EPSG:2263, NAD83 / New York Long Island (ftUS).
+#'
+#' @format ## `nyc_modzcta_sf`
+#' A simple feature collection with 178 rows and 5 columns:
+#' \describe{
+#'   \item{modzcta}{Modified ZCTA identifier (character)}
+#'   \item{label}{Display label listing the ZIP codes associated with the
+#'     MODZCTA. `NA` for `"99999"`.}
+#'   \item{zcta_list}{Comma-separated list of the Census ZCTAs combined into
+#'     the MODZCTA}
+#'   \item{pop_est}{Estimated population (integer)}
+#'   \item{geometry}{Multipolygon}
+#' }
+#' @details
+#' MODZCTAs are used by the NYC Department of Health and Mental Hygiene
+#' (DOHMH) for health-related reporting, including COVID-19 surveillance data
+#' and hospital catchment areas. Census ZCTAs with very small populations
+#' are merged with adjacent ZCTAs, and block-sized ZCTAs are merged with the
+#' ZCTA that surrounds them, giving 178 areas. The MODZCTA `"99999"` covers
+#' land not assigned to any other MODZCTA (mostly parks and other
+#' non-residential areas) and has a population of zero. Use
+#' [nyc_zcta_modzcta_df] to map Census ZCTAs to MODZCTAs.
+#'
+#' Boundaries are taken from the GeoJSON export of the NYC Open Data dataset,
+#' because the shapefile export was not available.
+#'
+#' @author Kieran Healy
+#' @source <https://data.cityofnewyork.us/Health/Modified-Zip-Code-Tabulation-Areas-MODZCTA-/pri4-ifjk>
+"nyc_modzcta_sf"
+
 #' New York City Municipal Court Districts
 #'
 #' Simple feature collection of NYC Municipal Court Districts.
@@ -787,3 +821,24 @@
 #' @author Kieran Healy
 #' @source <https://www.nyc.gov/content/planning/pages/resources#datasets>
 "nyc_state_senate_districts_sf"
+
+#' NYC ZCTA to Modified ZCTA (MODZCTA) crosswalk
+#'
+#' Crosswalk from Census Zip Code Tabulation Areas (ZCTAs) to the NYC
+#' Department of Health and Mental Hygiene's Modified ZCTAs.
+#'
+#' @format ## `nyc_zcta_modzcta_df`
+#' A data frame with 215 rows and 2 columns:
+#' \describe{
+#'   \item{zcta}{Census ZCTA (character)}
+#'   \item{modzcta}{Modified ZCTA the ZCTA belongs to (character). Joins to
+#'     `modzcta` in [nyc_modzcta_sf].}
+#' }
+#' @details
+#' Each row is one ZCTA. Several ZCTAs can map to the same MODZCTA. Use this
+#' table to aggregate ZCTA-level data, such as Census or ACS estimates, to
+#' MODZCTAs. Produced by NYC DOHMH.
+#'
+#' @author Kieran Healy
+#' @source <https://github.com/nychealth/coronavirus-data/tree/master/Geography-resources>
+"nyc_zcta_modzcta_df"
