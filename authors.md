@@ -12,12 +12,12 @@ Source:
 
 Healy K (2026). *nycmaps: A collection of sf objects and related tibbles
 for making maps of New York City*. R package version 0.0.3.9000,
-<https://github.com/kjhealy/nycmaps>.
+<https://kjhealy.github.io/nycmaps/>.
 
     @Manual{,
       title = {nycmaps: A collection of sf objects and related tibbles for making maps of New York City},
       author = {Kieran Healy},
       year = {2026},
       note = {R package version 0.0.3.9000},
-      url = {https://github.com/kjhealy/nycmaps},
+      url = {https://kjhealy.github.io/nycmaps/},
     }

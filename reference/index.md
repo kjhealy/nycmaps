@@ -18,6 +18,15 @@ Zip code tabulation areas (ZCTAs).
 - [`nyc_zip_sf`](https://kjhealy.github.io/nycmaps/reference/nyc_zip_sf.md)
   : Simple Features collection of NYC Zip Codes
 
+## Modified Zip Code Tabulation Areas
+
+NYC DOHMH modified ZCTAs (MODZCTAs) and ZCTA crosswalk.
+
+- [`nyc_modzcta_sf`](https://kjhealy.github.io/nycmaps/reference/nyc_modzcta_sf.md)
+  : NYC Modified Zip Code Tabulation Areas (MODZCTAs)
+- [`nyc_zcta_modzcta_df`](https://kjhealy.github.io/nycmaps/reference/nyc_zcta_modzcta_df.md)
+  : NYC ZCTA to Modified ZCTA (MODZCTA) crosswalk
+
 ## Neighborhood Tabulation Areas
 
 NTA boundaries for 2010 and 2020.

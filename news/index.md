@@ -2,6 +2,11 @@
 
 ## nycmaps 0.0.3.9000
 
+- New `nyc_modzcta_sf` contains the NYC Department of Health and Mental
+  Hygiene’s Modified Zip Code Tabulation Areas (MODZCTAs), used for
+  health reporting and hospital catchment areas. New
+  `nyc_zcta_modzcta_df` maps Census ZCTAs to MODZCTAs.
+
 - `nyc_boros_sf` and `nyc_boros` gain a `geoid` column holding the
   Census county GEOID for each borough (e.g. `"36061"` for Manhattan),
   so that county-level Census and ACS tables such as those in nycdemog
