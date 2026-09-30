@@ -7,7 +7,7 @@
 drop_staten_island(x, buffer = 10)
 }
 \arguments{
-\item{x}{An \code{sf} object or a \link[terra:SpatRaster-class]{terra::SpatRaster}. Must have a defined
+\item{x}{An \code{sf} object or a \link[terra:SpatRaster]{terra::SpatRaster}. Must have a defined
 CRS.}
 
 \item{buffer}{Numeric scalar giving the offset, in the map units of
@@ -27,7 +27,7 @@ southernmost tip of Breezy Point (the southern tip of Queens).
 }
 \details{
 This is an S3 generic with methods for \code{sf} objects and
-\link[terra:SpatRaster-class]{terra::SpatRaster} rasters.
+\link[terra:SpatRaster]{terra::SpatRaster} rasters.
 }
 \examples{
 drop_staten_island(nyc_boros_sf)

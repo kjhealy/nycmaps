@@ -51,10 +51,13 @@
 #' Clipped to shoreline. EPSG:2263, NAD83 / New York Long Island (ftUS). An sf object.
 #'
 #' @format ## `nyc_boros_sf`
-#' A data frame with 5 rows and 5 columns:
+#' A data frame with 5 rows and 6 columns:
 #' \describe{
 #'   \item{boro_code}{Numeric borough code}
 #'   \item{boro_name}{Borough Name}
+#'   \item{geoid}{Census county GEOID (state + county FIPS, e.g. "36061" for
+#'     Manhattan). Character. Use to join county-level Census and ACS tables,
+#'     such as those in the nycdemog package.}
 #'   \item{shape_leng}{Shape length}
 #'   \item{shape_area}{Shape area}
 #'   \item{geometry}{Multipolygon}
@@ -70,10 +73,13 @@
 #' Borough and county names and code.
 #'
 #' @format ## `nyc_boros`
-#' A data frame with 5 rows and 5 columns:
+#' A data frame with 5 rows and 6 columns:
 #' \describe{
 #'   \item{boro_code}{City borough code. (Numeric)}
 #'   \item{boro_name}{Borough name}
+#'   \item{geoid}{Census county GEOID (state + county FIPS, e.g. "36061" for
+#'     Manhattan). Character. Use to join county-level Census and ACS tables,
+#'     such as those in the nycdemog package.}
 #'   \item{county_name}{County_Name County}
 #'   \item{short_county_name}{County_Name}
 #'   \item{long_county_name}{County_Name County, New York}

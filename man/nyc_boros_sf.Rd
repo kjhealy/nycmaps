@@ -7,10 +7,13 @@
 \format{
 \subsection{\code{nyc_boros_sf}}{
 
-A data frame with 5 rows and 5 columns:
+A data frame with 5 rows and 6 columns:
 \describe{
 \item{boro_code}{Numeric borough code}
 \item{boro_name}{Borough Name}
+\item{geoid}{Census county GEOID (state + county FIPS, e.g. "36061" for
+Manhattan). Character. Use to join county-level Census and ACS tables,
+such as those in the nycdemog package.}
 \item{shape_leng}{Shape length}
 \item{shape_area}{Shape area}
 \item{geometry}{Multipolygon}
