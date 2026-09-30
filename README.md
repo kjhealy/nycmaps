@@ -41,9 +41,9 @@ library(tidyverse)
 #> ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 #> ✔ dplyr     1.2.1     ✔ readr     2.2.0
 #> ✔ forcats   1.0.1     ✔ stringr   1.6.0
-#> ✔ ggplot2   4.0.2     ✔ tibble    3.3.1
+#> ✔ ggplot2   4.0.3     ✔ tibble    3.3.1
 #> ✔ lubridate 1.9.5     ✔ tidyr     1.3.2
-#> ✔ purrr     1.2.1     
+#> ✔ purrr     1.2.2     
 #> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
@@ -59,27 +59,33 @@ library(nycmaps)
 
 ``` r
 nyc_boros
-#> # A tibble: 5 × 5
-#>   boro_code boro_name     county_name     short_county_name long_county_name    
-#>       <dbl> <chr>         <chr>           <chr>             <chr>               
-#> 1         1 Manhattan     New York County New York          New York County, Ne…
-#> 2         2 Bronx         Bronx County    Bronx             Bronx County, New Y…
-#> 3         3 Brooklyn      Kings County    Kings             Kings County, New Y…
-#> 4         4 Queens        Queens County   Queens            Queens County, New …
-#> 5         5 Staten Island Richmond County Richmond          Richmond County, Ne…
+#> # A tibble: 5 × 6
+#>   boro_code boro_name     geoid county_name   short_county_name long_county_name
+#>       <dbl> <chr>         <chr> <chr>         <chr>             <chr>           
+#> 1         1 Manhattan     36061 New York Cou… New York          New York County…
+#> 2         2 Bronx         36005 Bronx County  Bronx             Bronx County, N…
+#> 3         3 Brooklyn      36047 Kings County  Kings             Kings County, N…
+#> 4         4 Queens        36081 Queens County Queens            Queens County, …
+#> 5         5 Staten Island 36085 Richmond Cou… Richmond          Richmond County…
 
 nyc_boros_sf
-#> Simple feature collection with 5 features and 4 fields
+#> Simple feature collection with 5 features and 5 fields
 #> Geometry type: MULTIPOLYGON
 #> Dimension:     XY
 #> Bounding box:  xmin: 913175.1 ymin: 120128.4 xmax: 1067383 ymax: 272844.3
 #> Projected CRS: NAD83 / New York Long Island (ftUS)
-#>   boro_code     boro_name shape_leng shape_area                       geometry
-#> 1         5 Staten Island   325912.3 1623618358 MULTIPOLYGON (((970217 1456...
-#> 2         2         Bronx   463147.1 1187199300 MULTIPOLYGON (((1012822 229...
-#> 3         3      Brooklyn   726953.0 1934462608 MULTIPOLYGON (((1022227 152...
-#> 4         4        Queens   887905.1 3041419184 MULTIPOLYGON (((1032452 154...
-#> 5         1     Manhattan   359193.9  636627850 MULTIPOLYGON (((981219.1 18...
+#>   boro_code     boro_name geoid shape_leng shape_area
+#> 1         5 Staten Island 36085   325912.3 1623618358
+#> 2         2         Bronx 36005   463147.1 1187199300
+#> 3         3      Brooklyn 36047   726953.0 1934462608
+#> 4         4        Queens 36081   887905.1 3041419184
+#> 5         1     Manhattan 36061   359193.9  636627850
+#>                         geometry
+#> 1 MULTIPOLYGON (((970217 1456...
+#> 2 MULTIPOLYGON (((1012822 229...
+#> 3 MULTIPOLYGON (((1022227 152...
+#> 4 MULTIPOLYGON (((1032452 154...
+#> 5 MULTIPOLYGON (((981219.1 18...
 ```
 
 ``` r
@@ -163,6 +169,70 @@ ggplot(nyc_zip_sf) +
 ```
 
 <img src="man/figures/README-nyc-zips-map-1.png" alt="" width="100%" />
+
+## Modified Zip Code Tabulation Areas (MODZCTAs)
+
+The NYC Department of Health and Mental Hygiene’s modified ZCTAs merge
+ZCTAs with very small populations into adjacent ones, and block-sized
+ZCTAs into the ones that surround them. They are used for health
+reporting and to define hospital catchment areas. The crosswalk in
+`nyc_zcta_modzcta_df` maps Census ZCTAs to MODZCTAs.
+
+``` r
+nyc_modzcta_sf
+#> Simple feature collection with 178 features and 4 fields
+#> Geometry type: MULTIPOLYGON
+#> Dimension:     XY
+#> Bounding box:  xmin: 913176 ymin: 120122 xmax: 1067382 ymax: 272844
+#> Projected CRS: NAD83 / New York Long Island (ftUS)
+#> First 10 features:
+#>    modzcta        label           zcta_list pop_est
+#> 1    10001 10001, 10118 10001, 10119, 10199   23072
+#> 2    10002        10002               10002   74993
+#> 3    10003        10003               10003   54682
+#> 4    10004        10004               10004    3028
+#> 5    10005        10005        10005, 10271    8831
+#> 6    10006        10006               10006    3454
+#> 7    10007        10007 10007, 10278, 10279    7023
+#> 8    10009        10009               10009   57925
+#> 9    10010        10010               10010   33730
+#> 10   10011        10011               10011   50472
+#>                          geometry
+#> 1  MULTIPOLYGON (((987646 2103...
+#> 2  MULTIPOLYGON (((984942 1994...
+#> 3  MULTIPOLYGON (((987400 2026...
+#> 4  MULTIPOLYGON (((979872 1948...
+#> 5  MULTIPOLYGON (((982080 1954...
+#> 6  MULTIPOLYGON (((980782 1967...
+#> 7  MULTIPOLYGON (((981482 1978...
+#> 8  MULTIPOLYGON (((987400 2026...
+#> 9  MULTIPOLYGON (((989852 2070...
+#> 10 MULTIPOLYGON (((981710 2097...
+
+nyc_zcta_modzcta_df
+#> # A tibble: 215 × 2
+#>    zcta  modzcta
+#>    <chr> <chr>  
+#>  1 10001 10001  
+#>  2 10002 10002  
+#>  3 10003 10003  
+#>  4 10004 10004  
+#>  5 10005 10005  
+#>  6 10006 10006  
+#>  7 10007 10007  
+#>  8 10009 10009  
+#>  9 10010 10010  
+#> 10 10011 10011  
+#> # ℹ 205 more rows
+```
+
+``` r
+ggplot(nyc_modzcta_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+<img src="man/figures/README-nyc-modzcta-map-1.png" alt="" width="100%" />
 
 ## Neighborhood Tabulation Areas
 

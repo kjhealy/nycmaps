@@ -88,6 +88,22 @@ ggplot(nyc_zip_sf) +
   theme_void()
 ```
 
+## Modified Zip Code Tabulation Areas (MODZCTAs)
+
+The NYC Department of Health and Mental Hygiene's modified ZCTAs merge ZCTAs with very small populations into adjacent ones, and block-sized ZCTAs into the ones that surround them. They are used for health reporting and to define hospital catchment areas. The crosswalk in `nyc_zcta_modzcta_df` maps Census ZCTAs to MODZCTAs.
+
+```{r nyc-modzcta}
+nyc_modzcta_sf
+
+nyc_zcta_modzcta_df
+```
+
+```{r nyc-modzcta-map}
+ggplot(nyc_modzcta_sf) +
+  geom_sf() +
+  theme_void()
+```
+
 ## Neighborhood Tabulation Areas
 
 ### NTA 2010
