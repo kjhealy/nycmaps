@@ -12,7 +12,7 @@ nyc_boros
 
 ### `nyc_boros`
 
-A data frame with 5 rows and 5 columns:
+A data frame with 5 rows and 6 columns:
 
 - boro_code:
 
@@ -21,6 +21,12 @@ A data frame with 5 rows and 5 columns:
 - boro_name:
 
   Borough name
+
+- geoid:
+
+  Census county GEOID (state + county FIPS, e.g. "36061" for Manhattan).
+  Character. Use to join county-level Census and ACS tables, such as
+  those in the nycdemog package.
 
 - county_name:
 

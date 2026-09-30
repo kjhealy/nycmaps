@@ -2,6 +2,11 @@
 
 ## nycmaps 0.0.3.9000
 
+- `nyc_boros_sf` and `nyc_boros` gain a `geoid` column holding the
+  Census county GEOID for each borough (e.g. `"36061"` for Manhattan),
+  so that county-level Census and ACS tables such as those in nycdemog
+  can be joined directly.
+
 - [`drop_staten_island()`](https://kjhealy.github.io/nycmaps/reference/drop_staten_island.md)
   is now an S3 generic with methods for `sf` objects and
   [`terra::SpatRaster`](https://rspatial.github.io/terra/reference/SpatRaster-class.html)
