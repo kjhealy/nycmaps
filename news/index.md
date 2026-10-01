@@ -2,6 +2,9 @@
 
 ## nycmaps 0.0.3.9000
 
+- New `nyc_county_sf` and `nyc_county` are aliases for `nyc_boros_sf`
+  and `nyc_boros`, named for consistency with Census conventions.
+
 - New `nyc_modzcta_sf` contains the NYC Department of Health and Mental
   Hygiene’s Modified Zip Code Tabulation Areas (MODZCTAs), used for
   health reporting and hospital catchment areas. New

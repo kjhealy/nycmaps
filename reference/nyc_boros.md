@@ -6,6 +6,8 @@ Borough and county names and code.
 
 ``` r
 nyc_boros
+
+nyc_county
 ```
 
 ## Format
@@ -46,7 +48,8 @@ A data frame with 5 rows and 6 columns:
 
 ## Details
 
-DETAILS
+`nyc_county` is an identical copy of `nyc_boros`, named for consistency
+with Census conventions, where the boroughs are counties.
 
 ## Author
 

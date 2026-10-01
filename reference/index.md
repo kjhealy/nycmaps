@@ -5,8 +5,10 @@
 Borough boundaries and related spatial data.
 
 - [`nyc_boros`](https://kjhealy.github.io/nycmaps/reference/nyc_boros.md)
+  [`nyc_county`](https://kjhealy.github.io/nycmaps/reference/nyc_boros.md)
   : New York City borough names
 - [`nyc_boros_sf`](https://kjhealy.github.io/nycmaps/reference/nyc_boros_sf.md)
+  [`nyc_county_sf`](https://kjhealy.github.io/nycmaps/reference/nyc_boros_sf.md)
   : New York City borough boundaries
 
 ## Zip Codes

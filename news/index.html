@@ -32,7 +32,8 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.3.9000" id="nycmaps-0039000">nycmaps 0.0.3.9000<a class="anchor" aria-label="anchor" href="#nycmaps-0039000"></a></h2>
-<ul><li><p>New <code>nyc_modzcta_sf</code> contains the NYC Department of Health and Mental Hygiene’s Modified Zip Code Tabulation Areas (MODZCTAs), used for health reporting and hospital catchment areas. New <code>nyc_zcta_modzcta_df</code> maps Census ZCTAs to MODZCTAs.</p></li>
+<ul><li><p>New <code>nyc_county_sf</code> and <code>nyc_county</code> are aliases for <code>nyc_boros_sf</code> and <code>nyc_boros</code>, named for consistency with Census conventions.</p></li>
+<li><p>New <code>nyc_modzcta_sf</code> contains the NYC Department of Health and Mental Hygiene’s Modified Zip Code Tabulation Areas (MODZCTAs), used for health reporting and hospital catchment areas. New <code>nyc_zcta_modzcta_df</code> maps Census ZCTAs to MODZCTAs.</p></li>
 <li><p><code>nyc_boros_sf</code> and <code>nyc_boros</code> gain a <code>geoid</code> column holding the Census county GEOID for each borough (e.g. <code>"36061"</code> for Manhattan), so that county-level Census and ACS tables such as those in nycdemog can be joined directly.</p></li>
 <li><p><code><a href="../reference/drop_staten_island.html">drop_staten_island()</a></code> is now an S3 generic with methods for <code>sf</code> objects and <code><a href="https://rspatial.github.io/terra/reference/SpatRaster-class.html" class="external-link">terra::SpatRaster</a></code> rasters. The <code>SpatRaster</code> method applies the same west-and-south crop window as the <code>sf</code> method, using <code><a href="https://rspatial.github.io/terra/reference/crop.html" class="external-link">terra::crop()</a></code>.</p></li>
 </ul></div>
