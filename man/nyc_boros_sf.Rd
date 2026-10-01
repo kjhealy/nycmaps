@@ -3,6 +3,7 @@
 \docType{data}
 \name{nyc_boros_sf}
 \alias{nyc_boros_sf}
+\alias{nyc_county_sf}
 \title{New York City borough boundaries}
 \format{
 \subsection{\code{nyc_boros_sf}}{
@@ -25,12 +26,17 @@ such as those in the nycdemog package.}
 }
 \usage{
 nyc_boros_sf
+
+nyc_county_sf
 }
 \description{
 Clipped to shoreline. EPSG:2263, NAD83 / New York Long Island (ftUS). An sf object.
 }
 \details{
 Borough boundaries for NYC, clipped to shoreline. Produced by NYC Planning Department. Release: 25C, August 2025.
+
+\code{nyc_county_sf} is an identical copy of \code{nyc_boros_sf}, named for
+consistency with Census conventions, where the boroughs are counties.
 }
 \author{
 Kieran Healy

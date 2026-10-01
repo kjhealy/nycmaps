@@ -3,6 +3,7 @@
 \docType{data}
 \name{nyc_boros}
 \alias{nyc_boros}
+\alias{nyc_county}
 \title{New York City borough names}
 \format{
 \subsection{\code{nyc_boros}}{
@@ -25,12 +26,15 @@ such as those in the nycdemog package.}
 }
 \usage{
 nyc_boros
+
+nyc_county
 }
 \description{
 Borough and county names and code.
 }
 \details{
-DETAILS
+\code{nyc_county} is an identical copy of \code{nyc_boros}, named for
+consistency with Census conventions, where the boroughs are counties.
 }
 \author{
 Kieran Healy

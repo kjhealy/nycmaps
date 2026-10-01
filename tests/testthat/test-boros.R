@@ -47,3 +47,8 @@ test_that("nyc_boros_sf geoid matches Census county FIPS codes", {
     )
   )
 })
+
+test_that("nyc_county_sf and nyc_county are aliases of the boro objects", {
+  expect_identical(nyc_county_sf, nyc_boros_sf)
+  expect_identical(nyc_county, nyc_boros)
+})

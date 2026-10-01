@@ -63,9 +63,16 @@
 #'   \item{geometry}{Multipolygon}
 #' }
 #' @details Borough boundaries for NYC, clipped to shoreline. Produced by NYC Planning Department. Release: 25C, August 2025.
+#'
+#' `nyc_county_sf` is an identical copy of `nyc_boros_sf`, named for
+#' consistency with Census conventions, where the boroughs are counties.
 #' @author Kieran Healy
 #' @source <https://www.nyc.gov/content/planning/pages/resources#datasets>
 "nyc_boros_sf"
+
+#' @rdname nyc_boros_sf
+#' @format NULL
+"nyc_county_sf"
 
 
 #' New York City borough names
@@ -84,10 +91,15 @@
 #'   \item{short_county_name}{County_Name}
 #'   \item{long_county_name}{County_Name County, New York}
 #' }
-#' @details DETAILS
+#' @details `nyc_county` is an identical copy of `nyc_boros`, named for
+#' consistency with Census conventions, where the boroughs are counties.
 #' @author Kieran Healy
 #' @source <SOURCE_URL>
 "nyc_boros"
+
+#' @rdname nyc_boros
+#' @format NULL
+"nyc_county"
 
 
 #' New York City and locale shorelines

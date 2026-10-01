@@ -26,6 +26,10 @@ nyc_boros_sf <- st_read(here(
 
 usethis::use_data(nyc_boros_sf, overwrite = TRUE, compress = "xz")
 
+## Census-style alias
+nyc_county_sf <- nyc_boros_sf
+usethis::use_data(nyc_county_sf, overwrite = TRUE, compress = "xz")
+
 nyc_boros <- tribble(
   ~long_county_name           , ~county_name      , ~short_county_name , ~boro_name      , ~boro_code ,
   "New York County, New York" , "New York County" , "New York"         , "Manhattan"     ,          1 ,
@@ -47,3 +51,7 @@ nyc_boros <- tribble(
 
 
 usethis::use_data(nyc_boros, overwrite = TRUE)
+
+## Census-style alias
+nyc_county <- nyc_boros
+usethis::use_data(nyc_county, overwrite = TRUE)
