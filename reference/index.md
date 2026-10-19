@@ -93,6 +93,16 @@ Census block boundaries for 2000, 2010, and 2020.
 - [`nyc_census_blocks_2020_sf`](https://kjhealy.github.io/nycmaps/reference/nyc_census_blocks_2020_sf.md)
   : New York City Census Blocks 2020
 
+## Census Block Groups
+
+Census block group boundaries for 2010 and 2020, built from census
+blocks.
+
+- [`nyc_census_block_groups_2010_sf`](https://kjhealy.github.io/nycmaps/reference/nyc_census_block_groups_2010_sf.md)
+  : New York City Census Block Groups 2010
+- [`nyc_census_block_groups_2020_sf`](https://kjhealy.github.io/nycmaps/reference/nyc_census_block_groups_2020_sf.md)
+  : New York City Census Block Groups 2020
+
 ## Emergency Services
 
 Police precincts and fire company boundaries.

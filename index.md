@@ -302,50 +302,43 @@ nyc_nta20_sf
 #> Bounding box:  xmin: 913175.1 ymin: 120128.4 xmax: 1067383 ymax: 272844.3
 #> Projected CRS: NAD83 / New York Long Island (ftUS)
 #> First 10 features:
-#>    boro_code boro_name county_fips nta2020                            nta_name
-#> 1          3  Brooklyn         047  BK0101                          Greenpoint
-#> 2          3  Brooklyn         047  BK0102                        Williamsburg
-#> 3          3  Brooklyn         047  BK0103                  South Williamsburg
-#> 4          3  Brooklyn         047  BK0104                   East Williamsburg
-#> 5          3  Brooklyn         047  BK0201                    Brooklyn Heights
-#> 6          3  Brooklyn         047  BK0202 Downtown Brooklyn-DUMBO-Boerum Hill
-#> 7          3  Brooklyn         047  BK0203                         Fort Greene
-#> 8          3  Brooklyn         047  BK0204                        Clinton Hill
-#> 9          3  Brooklyn         047  BK0261                  Brooklyn Navy Yard
-#> 10         3  Brooklyn         047  BK0301           Bedford-Stuyvesant (West)
-#>    nta_abbrev nta_type cdta2020
-#> 1       Grnpt        0     BK01
-#> 2    Wllmsbrg        0     BK01
-#> 3   SWllmsbrg        0     BK01
-#> 4   EWllmsbrg        0     BK01
-#> 5       BkHts        0     BK02
-#> 6    DwntwnBk        0     BK02
-#> 7       FtGrn        0     BK02
-#> 8     ClntnHl        0     BK02
-#> 9    BkNvyYrd        6     BK02
-#> 10    BdSty_W        0     BK03
-#>                                                  cdta_name shape_leng
-#> 1           BK01 Williamsburg-Greenpoint (CD 1 Equivalent)   28919.56
-#> 2           BK01 Williamsburg-Greenpoint (CD 1 Equivalent)   28134.08
-#> 3           BK01 Williamsburg-Greenpoint (CD 1 Equivalent)   18250.28
-#> 4           BK01 Williamsburg-Greenpoint (CD 1 Equivalent)   43184.80
-#> 5  BK02 Downtown Brooklyn-Fort Greene (CD 2 Approximation)   14312.19
-#> 6  BK02 Downtown Brooklyn-Fort Greene (CD 2 Approximation)   30589.24
-#> 7  BK02 Downtown Brooklyn-Fort Greene (CD 2 Approximation)   23284.59
-#> 8  BK02 Downtown Brooklyn-Fort Greene (CD 2 Approximation)   18102.97
-#> 9  BK02 Downtown Brooklyn-Fort Greene (CD 2 Approximation)   39415.64
-#> 10            BK03 Bedford-Stuyvesant (CD 3 Approximation)   26307.65
-#>    shape_area                       geometry
-#> 1    35321809 MULTIPOLYGON (((1003060 204...
-#> 2    28852853 MULTIPOLYGON (((995851.9 20...
-#> 3    15208961 MULTIPOLYGON (((998047.2 19...
-#> 4    52267408 MULTIPOLYGON (((1005302 199...
-#> 5     9982023 MULTIPOLYGON (((986367.7 19...
-#> 6    23731597 MULTIPOLYGON (((990056.4 19...
-#> 7    17533714 MULTIPOLYGON (((994554.2 19...
-#> 8    14566585 MULTIPOLYGON (((994971 1871...
-#> 9    10106807 MULTIPOLYGON (((990092 1964...
-#> 10   36906699 MULTIPOLYGON (((999743.6 18...
+#>   boro_code boro_name county_fips nta2020                            nta_name
+#> 1         3  Brooklyn         047  BK0101                          Greenpoint
+#> 2         3  Brooklyn         047  BK0102                        Williamsburg
+#> 3         3  Brooklyn         047  BK0103                  South Williamsburg
+#> 4         3  Brooklyn         047  BK0104                   East Williamsburg
+#> 5         3  Brooklyn         047  BK0201                    Brooklyn Heights
+#> 6         3  Brooklyn         047  BK0202 Downtown Brooklyn-DUMBO-Boerum Hill
+#> 7         3  Brooklyn         047  BK0203                         Fort Greene
+#> 8         3  Brooklyn         047  BK0204                        Clinton Hill
+#>   nta_abbrev nta_type cdta2020
+#> 1      Grnpt        0     BK01
+#> 2   Wllmsbrg        0     BK01
+#> 3  SWllmsbrg        0     BK01
+#> 4  EWllmsbrg        0     BK01
+#> 5      BkHts        0     BK02
+#> 6   DwntwnBk        0     BK02
+#> 7      FtGrn        0     BK02
+#> 8    ClntnHl        0     BK02
+#>                                                 cdta_name shape_leng shape_area
+#> 1          BK01 Williamsburg-Greenpoint (CD 1 Equivalent)   28919.56   35321809
+#> 2          BK01 Williamsburg-Greenpoint (CD 1 Equivalent)   28134.08   28852853
+#> 3          BK01 Williamsburg-Greenpoint (CD 1 Equivalent)   18250.28   15208961
+#> 4          BK01 Williamsburg-Greenpoint (CD 1 Equivalent)   43184.80   52267408
+#> 5 BK02 Downtown Brooklyn-Fort Greene (CD 2 Approximation)   14312.19    9982023
+#> 6 BK02 Downtown Brooklyn-Fort Greene (CD 2 Approximation)   30589.24   23731597
+#> 7 BK02 Downtown Brooklyn-Fort Greene (CD 2 Approximation)   23284.59   17533714
+#> 8 BK02 Downtown Brooklyn-Fort Greene (CD 2 Approximation)   18102.97   14566585
+#>                         geometry
+#> 1 MULTIPOLYGON (((1003060 204...
+#> 2 MULTIPOLYGON (((995851.9 20...
+#> 3 MULTIPOLYGON (((998047.2 19...
+#> 4 MULTIPOLYGON (((1005302 199...
+#> 5 MULTIPOLYGON (((986367.7 19...
+#> 6 MULTIPOLYGON (((990056.4 19...
+#> 7 MULTIPOLYGON (((994554.2 19...
+#> 8 MULTIPOLYGON (((994971 1871...
+#>  [ reached 'max' / getOption("max.print") -- omitted 2 rows ]
 ```
 
 ``` r
@@ -812,39 +805,34 @@ nyc_census_tracts_2000_sf
 #> Bounding box:  xmin: 913175.1 ymin: 120121.9 xmax: 1067383 ymax: 272844.3
 #> Projected CRS: NAD83 / New York Long Island (ftUS)
 #> First 10 features:
-#>    ct_label boro_code boro_name ct2000 boro_ct2000 cd_eligibil nta_code
-#> 1        98         1 Manhattan 009800     1009800           I     MN19
-#> 2       190         1 Manhattan 019000     1019000           E     MN11
-#> 3       206         1 Manhattan 020600     1020600           E     MN03
-#> 4    231.02         1 Manhattan 023102     1023102           E     MN03
-#> 5       249         1 Manhattan 024900     1024900           E     MN36
-#> 6       263         1 Manhattan 026300     1026300           E     MN36
-#> 7       269         1 Manhattan 026900     1026900           E     MN35
-#> 8       277         1 Manhattan 027700     1027700           E     MN35
-#> 9       102         1 Manhattan 010200     1010200           I     MN17
-#> 10      104         1 Manhattan 010400     1010400           I     MN17
-#>                             ntan_ame puma shape_leng shape_area
-#> 1            Turtle Bay-East Midtown 3808   5534.200  1906016.4
-#> 2               Central Harlem South 3803   4231.827  1117371.7
-#> 3  Central Harlem North-Polo Grounds 3803   5176.873  1602693.8
-#> 4  Central Harlem North-Polo Grounds 3803   3267.741   413467.6
-#> 5           Washington Heights South 3801   3927.822   652856.5
-#> 6           Washington Heights South 3801   5730.542  1691892.0
-#> 7           Washington Heights North 3801   6017.037  1889655.8
-#> 8           Washington Heights North 3801   5903.153  1760156.1
-#> 9              Midtown-Midtown South 3807   5687.802  1860992.7
-#> 10             Midtown-Midtown South 3807   5693.036  1864600.4
-#>                          geometry
-#> 1  MULTIPOLYGON (((994133.5 21...
-#> 2  MULTIPOLYGON (((999462.8 23...
-#> 3  MULTIPOLYGON (((1002020 234...
-#> 4  MULTIPOLYGON (((1000966 240...
-#> 5  MULTIPOLYGON (((1001768 244...
-#> 6  MULTIPOLYGON (((1002443 248...
-#> 7  MULTIPOLYGON (((1004253 249...
-#> 8  MULTIPOLYGON (((1004253 249...
-#> 9  MULTIPOLYGON (((992216.5 21...
-#> 10 MULTIPOLYGON (((991325.9 21...
+#>   ct_label boro_code boro_name ct2000 boro_ct2000 cd_eligibil nta_code
+#> 1       98         1 Manhattan 009800     1009800           I     MN19
+#> 2      190         1 Manhattan 019000     1019000           E     MN11
+#> 3      206         1 Manhattan 020600     1020600           E     MN03
+#> 4   231.02         1 Manhattan 023102     1023102           E     MN03
+#> 5      249         1 Manhattan 024900     1024900           E     MN36
+#> 6      263         1 Manhattan 026300     1026300           E     MN36
+#> 7      269         1 Manhattan 026900     1026900           E     MN35
+#> 8      277         1 Manhattan 027700     1027700           E     MN35
+#>                            ntan_ame puma shape_leng shape_area
+#> 1           Turtle Bay-East Midtown 3808   5534.200  1906016.4
+#> 2              Central Harlem South 3803   4231.827  1117371.7
+#> 3 Central Harlem North-Polo Grounds 3803   5176.873  1602693.8
+#> 4 Central Harlem North-Polo Grounds 3803   3267.741   413467.6
+#> 5          Washington Heights South 3801   3927.822   652856.5
+#> 6          Washington Heights South 3801   5730.542  1691892.0
+#> 7          Washington Heights North 3801   6017.037  1889655.8
+#> 8          Washington Heights North 3801   5903.153  1760156.1
+#>                         geometry
+#> 1 MULTIPOLYGON (((994133.5 21...
+#> 2 MULTIPOLYGON (((999462.8 23...
+#> 3 MULTIPOLYGON (((1002020 234...
+#> 4 MULTIPOLYGON (((1000966 240...
+#> 5 MULTIPOLYGON (((1001768 244...
+#> 6 MULTIPOLYGON (((1002443 248...
+#> 7 MULTIPOLYGON (((1004253 249...
+#> 8 MULTIPOLYGON (((1004253 249...
+#>  [ reached 'max' / getOption("max.print") -- omitted 2 rows ]
 ```
 
 ``` r
@@ -867,39 +855,34 @@ nyc_census_tracts_2010_sf
 #> Bounding box:  xmin: 913175.1 ymin: 120128.4 xmax: 1067383 ymax: 272844.3
 #> Projected CRS: NAD83 / New York Long Island (ftUS)
 #> First 10 features:
-#>    ct_label boro_code     boro_name ct2010 boro_ct2010 cd_eligibil nta_code
-#> 1         9         5 Staten Island 000900     5000900           E     SI22
-#> 2       102         1     Manhattan 010200     1010200           I     MN17
-#> 3       104         1     Manhattan 010400     1010400           I     MN17
-#> 4       113         1     Manhattan 011300     1011300           I     MN17
-#> 5       130         1     Manhattan 013000     1013000           I     MN40
-#> 6       184         1     Manhattan 018400     1018400           E     MN34
-#> 7       206         1     Manhattan 020600     1020600           E     MN03
-#> 8       249         1     Manhattan 024900     1024900           I     MN36
-#> 9       269         1     Manhattan 026900     1026900           E     MN35
-#> 10     5.01         3      Brooklyn 000501     3000501           I     BK09
-#>                                     nta_name puma shape_leng shape_area
-#> 1  West New Brighton-New Brighton-St. George 3903   7729.017  2497009.7
-#> 2                      Midtown-Midtown South 3807   5687.802  1860992.7
-#> 3                      Midtown-Midtown South 3807   5693.036  1864600.4
-#> 4                      Midtown-Midtown South 3807   5699.861  1890907.3
-#> 5              Upper East Side-Carnegie Hill 3805   5807.973  1918144.6
-#> 6                          East Harlem North 3804   5771.874  1903568.4
-#> 7          Central Harlem North-Polo Grounds 3803   5176.873  1602693.8
-#> 8                   Washington Heights South 3801   3927.822   652856.3
-#> 9                   Washington Heights North 3801   6017.037  1889655.6
-#> 10              Brooklyn Heights-Cobble Hill 4004   4828.170   901507.1
-#>                          geometry
-#> 1  MULTIPOLYGON (((962269.1 17...
-#> 2  MULTIPOLYGON (((992216.5 21...
-#> 3  MULTIPOLYGON (((991325.9 21...
-#> 4  MULTIPOLYGON (((988650.3 21...
-#> 5  MULTIPOLYGON (((994920.1 22...
-#> 6  MULTIPOLYGON (((1000359 231...
-#> 7  MULTIPOLYGON (((1002020 234...
-#> 8  MULTIPOLYGON (((1001768 244...
-#> 9  MULTIPOLYGON (((1004253 249...
-#> 10 MULTIPOLYGON (((986186 1933...
+#>   ct_label boro_code     boro_name ct2010 boro_ct2010 cd_eligibil nta_code
+#> 1        9         5 Staten Island 000900     5000900           E     SI22
+#> 2      102         1     Manhattan 010200     1010200           I     MN17
+#> 3      104         1     Manhattan 010400     1010400           I     MN17
+#> 4      113         1     Manhattan 011300     1011300           I     MN17
+#> 5      130         1     Manhattan 013000     1013000           I     MN40
+#> 6      184         1     Manhattan 018400     1018400           E     MN34
+#> 7      206         1     Manhattan 020600     1020600           E     MN03
+#> 8      249         1     Manhattan 024900     1024900           I     MN36
+#>                                    nta_name puma shape_leng shape_area
+#> 1 West New Brighton-New Brighton-St. George 3903   7729.017  2497009.7
+#> 2                     Midtown-Midtown South 3807   5687.802  1860992.7
+#> 3                     Midtown-Midtown South 3807   5693.036  1864600.4
+#> 4                     Midtown-Midtown South 3807   5699.861  1890907.3
+#> 5             Upper East Side-Carnegie Hill 3805   5807.973  1918144.6
+#> 6                         East Harlem North 3804   5771.874  1903568.4
+#> 7         Central Harlem North-Polo Grounds 3803   5176.873  1602693.8
+#> 8                  Washington Heights South 3801   3927.822   652856.3
+#>                         geometry
+#> 1 MULTIPOLYGON (((962269.1 17...
+#> 2 MULTIPOLYGON (((992216.5 21...
+#> 3 MULTIPOLYGON (((991325.9 21...
+#> 4 MULTIPOLYGON (((988650.3 21...
+#> 5 MULTIPOLYGON (((994920.1 22...
+#> 6 MULTIPOLYGON (((1000359 231...
+#> 7 MULTIPOLYGON (((1002020 234...
+#> 8 MULTIPOLYGON (((1001768 244...
+#>  [ reached 'max' / getOption("max.print") -- omitted 2 rows ]
 ```
 
 ``` r
@@ -922,50 +905,35 @@ nyc_census_tracts_2020_sf
 #> Bounding box:  xmin: 913175.1 ymin: 120128.4 xmax: 1067383 ymax: 272844.3
 #> Projected CRS: NAD83 / New York Long Island (ftUS)
 #> First 10 features:
-#>    ct_label boro_code boro_name ct2020 boro_ct2020 cd_eligibil
-#> 1         1         1 Manhattan 000100     1000100           I
-#> 2     14.01         1 Manhattan 001401     1001401           I
-#> 3     14.02         1 Manhattan 001402     1001402           E
-#> 4        18         1 Manhattan 001800     1001800           I
-#> 5     22.01         1 Manhattan 002201     1002201           E
-#> 6     26.02         1 Manhattan 002602     1002602           E
-#> 7        28         1 Manhattan 002800     1002800           E
-#> 8        34         1 Manhattan 003400     1003400           I
-#> 9     36.01         1 Manhattan 003601     1003601           E
-#> 10    36.02         1 Manhattan 003602     1003602           I
-#>                                                    nta_name nta2020 cdta2020
-#> 1  The Battery-Governors Island-Ellis Island-Liberty Island  MN0191     MN01
-#> 2                                           Lower East Side  MN0302     MN03
-#> 3                                           Lower East Side  MN0302     MN03
-#> 4                                           Lower East Side  MN0302     MN03
-#> 5                                           Lower East Side  MN0302     MN03
-#> 6                                              East Village  MN0303     MN03
-#> 7                                              East Village  MN0303     MN03
-#> 8                                              East Village  MN0303     MN03
-#> 9                                           Lower East Side  MN0302     MN03
-#> 10                                             East Village  MN0303     MN03
-#>                                             cdtaname       geoid puma
-#> 1  MN01 Financial District-Tribeca (CD 1 Equivalent) 36061000100 4121
-#> 2   MN03 Lower East Side-Chinatown (CD 3 Equivalent) 36061001401 4103
-#> 3   MN03 Lower East Side-Chinatown (CD 3 Equivalent) 36061001402 4103
-#> 4   MN03 Lower East Side-Chinatown (CD 3 Equivalent) 36061001800 4103
-#> 5   MN03 Lower East Side-Chinatown (CD 3 Equivalent) 36061002201 4103
-#> 6   MN03 Lower East Side-Chinatown (CD 3 Equivalent) 36061002602 4103
-#> 7   MN03 Lower East Side-Chinatown (CD 3 Equivalent) 36061002800 4103
-#> 8   MN03 Lower East Side-Chinatown (CD 3 Equivalent) 36061003400 4103
-#> 9   MN03 Lower East Side-Chinatown (CD 3 Equivalent) 36061003601 4103
-#> 10  MN03 Lower East Side-Chinatown (CD 3 Equivalent) 36061003602 4103
-#>    shape_leng shape_area                       geometry
-#> 1   10833.044  1843004.5 MULTIPOLYGON (((972081.8 19...
-#> 2    5075.332  1006116.6 MULTIPOLYGON (((987475 2002...
-#> 3    4459.156  1226206.2 MULTIPOLYGON (((988387.7 20...
-#> 4    6391.921  2399276.9 MULTIPOLYGON (((987062.3 20...
-#> 5    5779.063  1740173.9 MULTIPOLYGON (((990139.8 20...
-#> 6    4491.203  1114857.1 MULTIPOLYGON (((991015.1 20...
-#> 7    5627.555  1973678.5 MULTIPOLYGON (((991650.9 20...
-#> 8    5503.307  1718451.6 MULTIPOLYGON (((990340 2050...
-#> 9    4201.295  1082296.2 MULTIPOLYGON (((987399.2 20...
-#> 10   4076.250   961070.5 MULTIPOLYGON (((987717.2 20...
+#>   ct_label boro_code boro_name ct2020 boro_ct2020 cd_eligibil
+#> 1        1         1 Manhattan 000100     1000100           I
+#> 2    14.01         1 Manhattan 001401     1001401           I
+#> 3    14.02         1 Manhattan 001402     1001402           E
+#> 4       18         1 Manhattan 001800     1001800           I
+#> 5    22.01         1 Manhattan 002201     1002201           E
+#> 6    26.02         1 Manhattan 002602     1002602           E
+#>                                                   nta_name nta2020 cdta2020
+#> 1 The Battery-Governors Island-Ellis Island-Liberty Island  MN0191     MN01
+#> 2                                          Lower East Side  MN0302     MN03
+#> 3                                          Lower East Side  MN0302     MN03
+#> 4                                          Lower East Side  MN0302     MN03
+#> 5                                          Lower East Side  MN0302     MN03
+#> 6                                             East Village  MN0303     MN03
+#>                                            cdtaname       geoid puma shape_leng
+#> 1 MN01 Financial District-Tribeca (CD 1 Equivalent) 36061000100 4121  10833.044
+#> 2  MN03 Lower East Side-Chinatown (CD 3 Equivalent) 36061001401 4103   5075.332
+#> 3  MN03 Lower East Side-Chinatown (CD 3 Equivalent) 36061001402 4103   4459.156
+#> 4  MN03 Lower East Side-Chinatown (CD 3 Equivalent) 36061001800 4103   6391.921
+#> 5  MN03 Lower East Side-Chinatown (CD 3 Equivalent) 36061002201 4103   5779.063
+#> 6  MN03 Lower East Side-Chinatown (CD 3 Equivalent) 36061002602 4103   4491.203
+#>   shape_area                       geometry
+#> 1    1843005 MULTIPOLYGON (((972081.8 19...
+#> 2    1006117 MULTIPOLYGON (((987475 2002...
+#> 3    1226206 MULTIPOLYGON (((988387.7 20...
+#> 4    2399277 MULTIPOLYGON (((987062.3 20...
+#> 5    1740174 MULTIPOLYGON (((990139.8 20...
+#> 6    1114857 MULTIPOLYGON (((991015.1 20...
+#>  [ reached 'max' / getOption("max.print") -- omitted 4 rows ]
 ```
 
 ``` r
@@ -1111,6 +1079,132 @@ ggplot(nyc_census_blocks_2020_sf) +
 
 ![](reference/figures/README-nyc-census-blocks-2020-map-1.png)
 
+## Census Block Groups
+
+Block groups are built by dissolving the shoreline-clipped NYC DCP
+census blocks, so they do not extend into the water. The `geoid` column
+joins to the `GEOID` column of block group data from
+`tidycensus::get_acs()`. ACS 5-year releases from 2020 onward use 2020
+geography; releases from 2010-2014 to 2015-2019 use 2010 geography.
+
+### Census Block Groups 2010
+
+``` r
+
+nyc_census_block_groups_2010_sf
+#> Simple feature collection with 6377 features and 5 fields
+#> Geometry type: MULTIPOLYGON
+#> Dimension:     XY
+#> Bounding box:  xmin: 913175.1 ymin: 120128.4 xmax: 1067383 ymax: 272844.3
+#> Projected CRS: NAD83 / New York Long Island (ftUS)
+#> # A tibble: 6,377 × 6
+#>    geoid        boro_code boro_name ct2010 bg2010                       geometry
+#>    <chr>        <chr>     <chr>     <chr>  <chr>  <MULTIPOLYGON [US_survey_foot>
+#>  1 360050001000 2         Bronx     000100 0      (((1014515 229922.3, 1014520 …
+#>  2 360050001001 2         Bronx     000100 1      (((1015992 225902.4, 1015890 …
+#>  3 360050002001 2         Bronx     000200 1      (((1023504 235802.6, 1023634 …
+#>  4 360050002002 2         Bronx     000200 2      (((1023597 233589.2, 1023616 …
+#>  5 360050002003 2         Bronx     000200 3      (((1023985 232719.6, 1023973 …
+#>  6 360050004000 2         Bronx     000400 0      (((1025961 232614.8, 1025966 …
+#>  7 360050004001 2         Bronx     000400 1      (((1023883 235327.8, 1023791 …
+#>  8 360050004002 2         Bronx     000400 2      (((1024304 234174.8, 1024261 …
+#>  9 360050004003 2         Bronx     000400 3      (((1024650 232396.2, 1024635 …
+#> 10 360050004004 2         Bronx     000400 4      (((1026873 234792.4, 1026832 …
+#> # ℹ 6,367 more rows
+```
+
+``` r
+
+ggplot(nyc_census_block_groups_2010_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+![](reference/figures/README-nyc-census-block-groups-2010-map-1.png)
+
+### Census Block Groups 2020
+
+``` r
+
+nyc_census_block_groups_2020_sf
+#> Simple feature collection with 6670 features and 5 fields
+#> Geometry type: MULTIPOLYGON
+#> Dimension:     XY
+#> Bounding box:  xmin: 913175.1 ymin: 120128.4 xmax: 1067383 ymax: 272844.3
+#> Projected CRS: NAD83 / New York Long Island (ftUS)
+#> # A tibble: 6,670 × 6
+#>    geoid        boro_code boro_name ct2020 bg2020                       geometry
+#>    <chr>        <chr>     <chr>     <chr>  <chr>  <MULTIPOLYGON [US_survey_foot>
+#>  1 360050001000 2         Bronx     000100 0      (((1014515 229922.3, 1014520 …
+#>  2 360050001001 2         Bronx     000100 1      (((1019424 225624.9, 1019395 …
+#>  3 360050002001 2         Bronx     000200 1      (((1023504 235802.6, 1023634 …
+#>  4 360050002002 2         Bronx     000200 2      (((1023597 233589.2, 1023616 …
+#>  5 360050002003 2         Bronx     000200 3      (((1023998 232766.2, 1023985 …
+#>  6 360050004000 2         Bronx     000400 0      (((1025961 232614.8, 1025966 …
+#>  7 360050004001 2         Bronx     000400 1      (((1023883 235327.8, 1023791 …
+#>  8 360050004002 2         Bronx     000400 2      (((1024304 234174.8, 1024261 …
+#>  9 360050004003 2         Bronx     000400 3      (((1026045 232522.3, 1026030 …
+#> 10 360050004004 2         Bronx     000400 4      (((1026945 234996, 1026920 23…
+#> # ℹ 6,660 more rows
+```
+
+``` r
+
+ggplot(nyc_census_block_groups_2020_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+![](reference/figures/README-nyc-census-block-groups-2020-map-1.png)
+
+### Joining ACS data
+
+Median household income by block group from the 2020-2024 ACS, joined by
+GEOID. Requires a Census API key.
+
+``` r
+
+nyc_bg_income <- tidycensus::get_acs(
+  geography = "block group",
+  variables = c(med_hhinc = "B19013_001"),
+  state = "NY",
+  county = c("005", "047", "061", "081", "085"),
+  year = 2024
+)
+
+nyc_bg_income
+#> # A tibble: 6,807 × 5
+#>    GEOID        NAME                                    variable estimate    moe
+#>    <chr>        <chr>                                   <chr>       <dbl>  <dbl>
+#>  1 360050001000 Block Group 0; Census Tract 1; Bronx C… med_hhi…       NA     NA
+#>  2 360050001001 Block Group 1; Census Tract 1; Bronx C… med_hhi…       NA     NA
+#>  3 360050002000 Block Group 0; Census Tract 2; Bronx C… med_hhi…       NA     NA
+#>  4 360050002001 Block Group 1; Census Tract 2; Bronx C… med_hhi…   144821 131250
+#>  5 360050002002 Block Group 2; Census Tract 2; Bronx C… med_hhi…   124486  11451
+#>  6 360050002003 Block Group 3; Census Tract 2; Bronx C… med_hhi…    69773  44254
+#>  7 360050004000 Block Group 0; Census Tract 4; Bronx C… med_hhi…       NA     NA
+#>  8 360050004001 Block Group 1; Census Tract 4; Bronx C… med_hhi…       NA     NA
+#>  9 360050004002 Block Group 2; Census Tract 4; Bronx C… med_hhi…       NA     NA
+#> 10 360050004003 Block Group 3; Census Tract 4; Bronx C… med_hhi…   146293  88932
+#> # ℹ 6,797 more rows
+```
+
+``` r
+
+nyc_census_block_groups_2020_sf |>
+  left_join(nyc_bg_income, by = c("geoid" = "GEOID")) |>
+  ggplot(mapping = aes(fill = estimate)) +
+  geom_sf(color = NA) +
+  scale_fill_viridis_c(
+    labels = scales::label_dollar(),
+    na.value = "gray80"
+  ) +
+  labs(fill = "Median household\nincome") +
+  theme_void()
+```
+
+![](reference/figures/README-nyc-census-block-groups-acs-map-1.png)
+
 ## Atomic Polygons
 
 ``` r
@@ -1122,61 +1216,27 @@ nyc_atomic_polygons_sf
 #> Bounding box:  xmin: 912287.1 ymin: 113279.3 xmax: 1067383 ymax: 273617.8
 #> Projected CRS: NAD83 / New York Long Island (ftUS)
 #> First 10 features:
-#>    borough censusbloc censusbl_1 censustrac censusbl_2 censusbl_3 censustr_1
-#> 1        5       4023       <NA>     024400       1020       <NA>     024401
-#> 2        5       4030       <NA>     024400       2004       <NA>     024401
-#> 3        5       2002          B     024400       1005       <NA>     024402
-#> 4        5       4031       <NA>     024400       2005       <NA>     024401
-#> 5        5       4015       <NA>     024400       1018       <NA>     024401
-#> 6        5       4014       <NA>     024400       1011       <NA>     024401
-#> 7        5       3033       <NA>     024400       2019       <NA>     024402
-#> 8        5       3035       <NA>     024400       2020       <NA>     024402
-#> 9        5       3031       <NA>     024400       2016       <NA>     024402
-#> 10       5       3029       <NA>     024400       2034       <NA>     024402
-#>    censustr_2 admin_fire water_flag assemdist electdist schooldist commdist
-#> 1      024400      E 151          2        62       002         31      503
-#> 2      024400      E 151          2        62       006         31      503
-#> 3      024400      E 151          2        62       004         31      503
-#> 4      024400      E 151          2        62       006         31      503
-#> 5      024400      E 151          2        62       002         31      503
-#> 6      024400      E 151          2        62       002         31      503
-#> 7      024400      E 151          2        62       001         31      503
-#> 8      024400      E 151          2        62       001         31      503
-#> 9      024400      E 151          2        62       001         31      503
-#> 10     024400      E 151          2        62       001         31      503
-#>    sb1_volume sb1_page sb2_volume sb2_page sb3_volume sb3_page   atomicid
-#> 1          05      533       <NA>     <NA>       <NA>     <NA> 5024401430
-#> 2          05      533       <NA>     <NA>       <NA>     <NA> 5024401439
-#> 3          05      530         05      529       <NA>     <NA> 5024402223
-#> 4          05      533       <NA>     <NA>       <NA>     <NA> 5024401441
-#> 5          05      532       <NA>     <NA>       <NA>     <NA> 5024401440
-#> 6          05      532       <NA>     <NA>       <NA>     <NA> 5024401465
-#> 7          00      000       <NA>     <NA>       <NA>     <NA> 5024402341
-#> 8          00      000       <NA>     <NA>       <NA>     <NA> 5024402308
-#> 9          00      000       <NA>     <NA>       <NA>     <NA> 5024402339
-#> 10         05      534       <NA>     <NA>       <NA>     <NA> 5024402337
-#>    atomic_num hurricane censustr_3 censusbl_4 censusbl_5 commercial shape_leng
-#> 1        <NA>         X     024401       1007       <NA>        SI1  2424.5604
-#> 2        <NA>         X     024401       2010       <NA>        SI1  1722.9312
-#> 3        <NA>         6     024402       1004       <NA>        SI1   770.0857
-#> 4        <NA>         X     024401       2011       <NA>        SI1  1697.9085
-#> 5        <NA>         X     024401       1021       <NA>        SI1  1243.1069
-#> 6        <NA>         X     024401       1018       <NA>        SI1  1259.2088
-#> 7        <NA>         1     024402       2010       <NA>        SI1  1866.8869
-#> 8        <NA>         1     024402       2010       <NA>        SI1  1018.7129
-#> 9        <NA>         1     024402       2010       <NA>        SI1  1556.3802
-#> 10       <NA>         1     024402       2010       <NA>        SI1  1588.9853
-#>    shape_area                       geometry
-#> 1   244110.62 MULTIPOLYGON (((916060.7 12...
-#> 2   177042.35 MULTIPOLYGON (((917670.2 12...
-#> 3    33790.84 MULTIPOLYGON (((920007.2 12...
-#> 4   171623.34 MULTIPOLYGON (((918015.6 12...
-#> 5    78855.83 MULTIPOLYGON (((914247.2 12...
-#> 6    92975.91 MULTIPOLYGON (((913894.6 12...
-#> 7   180710.25 MULTIPOLYGON (((915716 1203...
-#> 8    64847.42 MULTIPOLYGON (((915016.6 12...
-#> 9   133972.42 MULTIPOLYGON (((916170.7 12...
-#> 10  136178.82 MULTIPOLYGON (((916661.1 12...
+#>   borough censusbloc censusbl_1 censustrac censusbl_2 censusbl_3 censustr_1
+#> 1       5       4023       <NA>     024400       1020       <NA>     024401
+#> 2       5       4030       <NA>     024400       2004       <NA>     024401
+#> 3       5       2002          B     024400       1005       <NA>     024402
+#>   censustr_2 admin_fire water_flag assemdist electdist schooldist commdist
+#> 1     024400      E 151          2        62       002         31      503
+#> 2     024400      E 151          2        62       006         31      503
+#> 3     024400      E 151          2        62       004         31      503
+#>   sb1_volume sb1_page sb2_volume sb2_page sb3_volume sb3_page   atomicid
+#> 1         05      533       <NA>     <NA>       <NA>     <NA> 5024401430
+#> 2         05      533       <NA>     <NA>       <NA>     <NA> 5024401439
+#> 3         05      530         05      529       <NA>     <NA> 5024402223
+#>   atomic_num hurricane censustr_3 censusbl_4 censusbl_5 commercial shape_leng
+#> 1       <NA>         X     024401       1007       <NA>        SI1  2424.5604
+#> 2       <NA>         X     024401       2010       <NA>        SI1  1722.9312
+#> 3       <NA>         6     024402       1004       <NA>        SI1   770.0857
+#>   shape_area                       geometry
+#> 1  244110.62 MULTIPOLYGON (((916060.7 12...
+#> 2  177042.35 MULTIPOLYGON (((917670.2 12...
+#> 3   33790.84 MULTIPOLYGON (((920007.2 12...
+#>  [ reached 'max' / getOption("max.print") -- omitted 7 rows ]
 ```
 
 ``` r
@@ -1289,39 +1349,28 @@ nyc_shoclip_sf
 #> Bounding box:  xmin: 913175.1 ymin: 120128.4 xmax: 1067338 ymax: 272744.1
 #> Projected CRS: NAD83 / New York Long Island (ftUS)
 #> First 10 features:
-#>    SOURCE_ID SRC_DATE HOR_ACC  INFORM                     ATTRIBUTE VER_DATE
-#> 1       <NA> 19991015     2.5    <NA> Man-made.Bulkhead Or Sea Wall     <NA>
-#> 2       <NA> 19991015     2.5 Culvert Man-made.Bulkhead Or Sea Wall     <NA>
-#> 3       <NA> 19991015     2.5 Culvert Man-made.Bulkhead Or Sea Wall     <NA>
-#> 4       <NA> 20140601     1.7    <NA>                 Man-made.Ramp     <NA>
-#> 5       <NA> 20140607     0.6    <NA> Man-made.Bulkhead Or Sea Wall     <NA>
-#> 6       <NA> 20140607     0.6 Culvert Man-made.Bulkhead Or Sea Wall     <NA>
-#> 7       <NA> 20140607     0.6 Culvert Man-made.Bulkhead Or Sea Wall     <NA>
-#> 8       <NA> 20140607     1.1    <NA>       Natural.Mean High Water     <NA>
-#> 9       <NA> 20201104      18    <NA> Man-made.Bulkhead Or Sea Wall     <NA>
-#> 10      <NA> 20201104      18    <NA> Man-made.Bulkhead Or Sea Wall     <NA>
-#>    SRC_RESOLU         DATA_SOURC EX_METH EXT_METH DAT_SET_CR SRC_CITA
-#> 1           0 Aerial Photography  Stereo   Stereo       NOAA     <NA>
-#> 2           0 Aerial Photography  Stereo   Stereo       NOAA     <NA>
-#> 3           0 Aerial Photography  Stereo   Stereo       NOAA     <NA>
-#> 4           0  Satellite Imagery    Mono     Mono       NOAA     <NA>
-#> 5           0 Aerial Photography  Stereo   Stereo       NOAA     <NA>
-#> 6           0 Aerial Photography  Stereo   Stereo       NOAA     <NA>
-#> 7           0 Aerial Photography  Stereo   Stereo       NOAA     <NA>
-#> 8           0  Satellite Imagery    Mono     Mono       NOAA     <NA>
-#> 9           0  Satellite Imagery    Mono     Mono       NOAA     <NA>
-#> 10          0  Satellite Imagery    Mono     Mono       NOAA     <NA>
-#>    FIPS_ALPHA     NOAA_Regio   Shape_Leng                       geometry
-#> 1          NY North Atlantic 1.237811e-04 LINESTRING (1007371 161954....
-#> 2          NY North Atlantic 2.563477e-04 LINESTRING (1031387 179714....
-#> 3          NY North Atlantic 2.568629e-04 LINESTRING (1031458 179733....
-#> 4          NY North Atlantic 5.014010e-05 LINESTRING (1011262 167285....
-#> 5          NY North Atlantic 3.591639e-05 LINESTRING (1022894 179553....
-#> 6          NY North Atlantic 9.933048e-05 LINESTRING (1022867 179537,...
-#> 7          NY North Atlantic 9.257937e-05 LINESTRING (1022885 179548....
-#> 8          NY North Atlantic 2.277028e-05 LINESTRING (1004156 151828....
-#> 9          NY North Atlantic 3.005030e-04 LINESTRING (1010057 163796,...
-#> 10         NY North Atlantic 2.010112e-04 LINESTRING (1009808 164187....
+#>   SOURCE_ID SRC_DATE HOR_ACC  INFORM                     ATTRIBUTE VER_DATE
+#> 1      <NA> 19991015     2.5    <NA> Man-made.Bulkhead Or Sea Wall     <NA>
+#> 2      <NA> 19991015     2.5 Culvert Man-made.Bulkhead Or Sea Wall     <NA>
+#> 3      <NA> 19991015     2.5 Culvert Man-made.Bulkhead Or Sea Wall     <NA>
+#> 4      <NA> 20140601     1.7    <NA>                 Man-made.Ramp     <NA>
+#> 5      <NA> 20140607     0.6    <NA> Man-made.Bulkhead Or Sea Wall     <NA>
+#> 6      <NA> 20140607     0.6 Culvert Man-made.Bulkhead Or Sea Wall     <NA>
+#>   SRC_RESOLU         DATA_SOURC EX_METH EXT_METH DAT_SET_CR SRC_CITA FIPS_ALPHA
+#> 1          0 Aerial Photography  Stereo   Stereo       NOAA     <NA>         NY
+#> 2          0 Aerial Photography  Stereo   Stereo       NOAA     <NA>         NY
+#> 3          0 Aerial Photography  Stereo   Stereo       NOAA     <NA>         NY
+#> 4          0  Satellite Imagery    Mono     Mono       NOAA     <NA>         NY
+#> 5          0 Aerial Photography  Stereo   Stereo       NOAA     <NA>         NY
+#> 6          0 Aerial Photography  Stereo   Stereo       NOAA     <NA>         NY
+#>       NOAA_Regio   Shape_Leng                       geometry
+#> 1 North Atlantic 1.237811e-04 LINESTRING (1007371 161954....
+#> 2 North Atlantic 2.563477e-04 LINESTRING (1031387 179714....
+#> 3 North Atlantic 2.568629e-04 LINESTRING (1031458 179733....
+#> 4 North Atlantic 5.014010e-05 LINESTRING (1011262 167285....
+#> 5 North Atlantic 3.591639e-05 LINESTRING (1022894 179553....
+#> 6 North Atlantic 9.933048e-05 LINESTRING (1022867 179537,...
+#>  [ reached 'max' / getOption("max.print") -- omitted 4 rows ]
 ```
 
 ``` r
