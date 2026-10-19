@@ -1,4 +1,9 @@
-# nycmaps 0.0.3.9000
+# nycmaps 0.0.4
+
+* New `nyc_census_block_groups_2020_sf` and `nyc_census_block_groups_2010_sf`
+  contain shoreline-clipped census block groups for all five boroughs, built
+  from the NYC DCP census blocks. Their `geoid` column joins to block group
+  ACS data from `tidycensus::get_acs()`.
 
 * New `nyc_county_sf` and `nyc_county` are aliases for `nyc_boros_sf` and
   `nyc_boros`, named for consistency with Census conventions.

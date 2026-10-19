@@ -352,6 +352,63 @@ ggplot(nyc_census_blocks_2020_sf) +
   theme_void()
 ```
 
+## Census Block Groups
+
+Block groups are built by dissolving the shoreline-clipped NYC DCP census blocks, so they do not extend into the water. The `geoid` column joins to the `GEOID` column of block group data from `tidycensus::get_acs()`. ACS 5-year releases from 2020 onward use 2020 geography; releases from 2010-2014 to 2015-2019 use 2010 geography.
+
+### Census Block Groups 2010
+
+```{r nyc-census-block-groups-2010}
+nyc_census_block_groups_2010_sf
+```
+
+```{r nyc-census-block-groups-2010-map}
+ggplot(nyc_census_block_groups_2010_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+### Census Block Groups 2020
+
+```{r nyc-census-block-groups-2020}
+nyc_census_block_groups_2020_sf
+```
+
+```{r nyc-census-block-groups-2020-map}
+ggplot(nyc_census_block_groups_2020_sf) +
+  geom_sf() +
+  theme_void()
+```
+
+### Joining ACS data
+
+Median household income by block group from the 2020-2024 ACS, joined by GEOID. Requires a Census API key.
+
+```{r nyc-census-block-groups-acs, message = FALSE}
+nyc_bg_income <- tidycensus::get_acs(
+  geography = "block group",
+  variables = c(med_hhinc = "B19013_001"),
+  state = "NY",
+  county = c("005", "047", "061", "081", "085"),
+  year = 2024
+)
+
+nyc_bg_income
+```
+
+```{r nyc-census-block-groups-acs-map}
+nyc_census_block_groups_2020_sf |>
+  left_join(nyc_bg_income, by = c("geoid" = "GEOID")) |>
+  ggplot(mapping = aes(fill = estimate)) +
+  geom_sf(color = NA) +
+  scale_fill_viridis_c(
+    labels = scales::label_dollar(),
+    na.value = "gray80"
+  ) +
+  labs(fill = "Median household\nincome") +
+  theme_void()
+```
+
 ## Atomic Polygons
 
 ```{r nyc-atomic-polygons}

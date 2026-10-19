@@ -70,6 +70,12 @@ reference:
       - nyc_census_blocks_2010_sf
       - nyc_census_blocks_2020_sf
 
+  - title: "Census Block Groups"
+    desc: Census block group boundaries for 2010 and 2020, built from census blocks.
+    contents:
+      - nyc_census_block_groups_2010_sf
+      - nyc_census_block_groups_2020_sf
+
   - title: "Emergency Services"
     desc: Police precincts and fire company boundaries.
     contents:
