@@ -7,13 +7,14 @@
 \format{
 \subsection{\code{nyc_census_tracts_2000_sf}}{
 
-A simple feature collection with 2216 rows and 12 columns:
+A simple feature collection with 2216 rows and 13 columns:
 \describe{
 \item{ct_label}{Census tract identifier}
 \item{boro_code}{Borough code as character (1=Manhattan, 2=Bronx, 3=Brooklyn, 4=Queens, 5=Staten Island)}
 \item{boro_name}{Borough name}
 \item{ct2000}{2000 census tract number (6-digit)}
 \item{boro_ct2000}{Unique identifier for 2000 census tracts (BoroCode + CT2000)}
+\item{geoid}{Census tract GEOID (11 characters): state FIPS \code{36}, county FIPS from \code{boro_code} (1=061, 2=005, 3=047, 4=081, 5=085), and \code{ct2000}. Joins to 2000 tract-level Census tables.}
 \item{cd_eligibil}{Community District eligibility (E=Eligible, I=Ineligible)}
 \item{nta_code}{Unique alphanumeric identifier for each Neighborhood Tabulation Area}
 \item{ntan_ame}{Neighborhood Tabulation Area name}
