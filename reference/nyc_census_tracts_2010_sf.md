@@ -13,7 +13,7 @@ nyc_census_tracts_2010_sf
 
 ### `nyc_census_tracts_2010_sf`
 
-A simple feature collection with 2165 rows and 12 columns:
+A simple feature collection with 2165 rows and 13 columns:
 
 - ct_label:
 
@@ -35,6 +35,12 @@ A simple feature collection with 2165 rows and 12 columns:
 - boro_ct2010:
 
   Unique identifier for 2010 census tracts (BoroCode + CT2010)
+
+- geoid:
+
+  Census tract GEOID (11 characters): state FIPS `36`, county FIPS from
+  `boro_code` (1=061, 2=005, 3=047, 4=081, 5=085), and `ct2010`. Joins
+  to 2010 tract-level Census tables.
 
 - cd_eligibil:
 
@@ -73,6 +79,11 @@ A simple feature collection with 2165 rows and 12 columns:
 Census tracts are small, relatively permanent statistical subdivisions
 of a county. Produced by NYC Planning Department. Release: 25C, August
 2025.
+
+The file omits three 2010 Census tracts that have no population or
+housing units (`36047990100`, `36081990100`, `36085008900`). Every other
+2010 tract GEOID in the five counties, such as those in the Longitudinal
+Tract Database, matches a `geoid` here.
 
 ## Author
 

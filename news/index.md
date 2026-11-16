@@ -1,5 +1,12 @@
 # Changelog
 
+## nycmaps 0.0.5
+
+- `nyc_census_tracts_2010_sf` and `nyc_census_tracts_2000_sf` gain an
+  11-character `geoid` column (state, county, and tract FIPS codes),
+  matching `nyc_census_tracts_2020_sf`. The 2010 `geoid` joins to 2010
+  tract-level tables such as `nyctracts::nyc_ltdb_fullcount_df`.
+
 ## nycmaps 0.0.4
 
 - New `nyc_census_block_groups_2020_sf` and

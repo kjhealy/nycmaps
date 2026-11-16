@@ -13,7 +13,7 @@ nyc_census_tracts_2000_sf
 
 ### `nyc_census_tracts_2000_sf`
 
-A simple feature collection with 2216 rows and 12 columns:
+A simple feature collection with 2216 rows and 13 columns:
 
 - ct_label:
 
@@ -35,6 +35,12 @@ A simple feature collection with 2216 rows and 12 columns:
 - boro_ct2000:
 
   Unique identifier for 2000 census tracts (BoroCode + CT2000)
+
+- geoid:
+
+  Census tract GEOID (11 characters): state FIPS `36`, county FIPS from
+  `boro_code` (1=061, 2=005, 3=047, 4=081, 5=085), and `ct2000`. Joins
+  to 2000 tract-level Census tables.
 
 - cd_eligibil:
 
